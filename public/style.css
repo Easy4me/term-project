@@ -1,0 +1,48 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header, footer {
+    background: #222;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  nav, .categories {
+    margin: 10px 0;
+  }
+  
+  nav input {
+    padding: 5px;
+  }
+  
+  .slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .filters {
+    padding: 10px;
+    background: #f0f0f0;
+  }
+  
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .product {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  
