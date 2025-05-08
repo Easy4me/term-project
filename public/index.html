@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <title>Action! Autos</title>
   <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+
   <header>
     <h1>Action! Autos</h1>
     <p><em>"~quote~"</em></p>
@@ -24,22 +26,14 @@
     </div>
   </header>
 
+  <!-- Slideshow -->
   <section class="slideshow">
-    <button>&lt;</button>
-    <img src="images/car1.jpg.jpg", alt="Car slideshow" width="400">
-    <img src="images/car2.jpg.jpeg", alt="Car slideshow" width="400">
-    <img src="images/Van1.jpg", alt="Car slideshow" width="400">
-    <img src="images/van2.jpg", alt="Car slideshow" width="400">
-    <img src="images/Bike1.jpg", alt="Car slideshow" width="400">
-    <img src="images/Bike2.jpg", alt="Car slideshow" width="400">
-
-
-
-
-
-    <button>&gt;</button>
+    <button class="prev" onclick="changeSlide(-1)">❮</button>
+    <img id="slideshow-image" src="images/product/akira_1.jpg" alt="Car slideshow" width="400">
+    <button class="next" onclick="changeSlide(1)">❯</button>
   </section>
 
+  <!-- Filter Section -->
   <section class="filters">
     <h2>Filter by Type:</h2>
     <form>
@@ -51,22 +45,65 @@
     </form>
   </section>
 
+  <!-- Product Grid -->
   <section class="products">
     <h2>All Products</h2>
     <div class="product-grid">
-      <!-- Sample product thumbnails -->
+
       <div class="product">
-        <img src="images/car1.jpg" alt="Car Thumbnail">
-        <p>Name: Speedster</p>
-        <p>Price: $25.00</p>
-        <a href="product.html?id=1">View</a>
+        <img src="images/product/akira_1.jpg" alt="Kaneda's Bike">
+        <h3>Kaneda's Bike</h3>
+        <p>$1,200,000</p>
+        <button>Add to Cart</button>
       </div>
-      <!-- Repeat for more products -->
+
+      <div class="product">
+        <img src="images/product/bat05_1.jpg" alt="Batmobile">
+        <h3>Batmobile 2005</h3>
+        <p>$1,500,000</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/product/delorean_1.jpg" alt="DeLorean">
+        <h3>DeLorean Time Machine</h3>
+        <p>$2,000,000</p>
+        <button>Add to Cart</button>
+      </div>
+
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <a href="about.html">About Us / FAQ</a>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const images = [
+      "images/product/akira_1.jpg",
+      "images/product/akira_2.jpg",
+      "images/product/akira_3.jpg",
+      "images/product/bat05_1.jpg",
+      "images/product/bat05_2.jpg",
+      "images/product/bat05_3.jpg"
+    ];
+
+    let currentIndex = 0;
+    const slideshowImage = document.getElementById("slideshow-image");
+
+    function changeSlide(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = images.length - 1;
+      if (currentIndex >= images.length) currentIndex = 0;
+      slideshowImage.src = images[currentIndex];
+    }
+
+    setInterval(() => {
+      changeSlide(1);
+    }, 3000);
+  </script>
+
 </body>
 </html>
