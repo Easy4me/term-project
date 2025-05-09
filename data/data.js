@@ -18,6 +18,7 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           car_name TEXT NOT NULL UNIQUE,
           price INTEGER,
+          description TEXT,
           category TEXT DEFAULT 'uncategorized',
           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
@@ -29,8 +30,57 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
         }
       });
     });
+
+    // Set up the database schema
+    db.serialize(() => {
+      db.run(`CREATE TABLE IF NOT EXISTS users (
+          firstname TEXT NOT NULL UNIQUE,
+          lastname TEXT NOT NULL UNIQUE,
+          username TEXT NOT NULL UNIQUE,
+          password TEXT NOT NULL UNIQUE,
+          email TEXT,
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+          )`
+      , (err) => {
+        if (err) {
+         console.error('Error creating table:', err.message);
+        } else {
+         console.log('Database table created or already exists.');
+        }
+      });
+    });
   }
 });
+
+/*
+const db = new sqlite3.Database('./database.sqlite', (err) => {
+  if (err) {
+    console.error('Error opening database:', err.message);
+  } else {
+    console.log('Connected to the SQLite database.');
+   
+    // Set up the database schema
+    db.serialize(() => {
+      db.run(`CREATE TABLE IF NOT EXISTS users (
+          firstname TEXT NOT NULL UNIQUE,
+          lastname TEXT NOT NULL UNIQUE,
+          username TEXT NOT NULL UNIQUE,
+          password TEXT NOT NULL UNIQUE,
+          email TEXT,
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+          )`
+      , (err) => {
+        if (err) {
+         console.error('Error creating table:', err.message);
+        } else {
+         console.log('Database table created or already exists.');
+        }
+      });
+    });
+  }
+});
+
+*/
 
 // Create a car
 app.post('/products', (req, res) => {
@@ -83,7 +133,6 @@ app.get('/products/:id', (req, res) => {
 });
 
 // Update a car 
-/*
 app.put('/products/:id', (req, res) => {
   const { id, car_name, price, category } = req.body;
   
@@ -110,53 +159,6 @@ app.put('/products/:id', (req, res) => {
   );
 });
 
-// Partially update a car
-app.patch('/colors/:id', (req, res) => {
-  const { car_name, price, category } = req.body;
-  
-  // Build dynamic update query
-  const updates = [];
-  const values = [];
-  
-  if (car_name) {
-    updates.push('car_name = ?');
-    values.push(car_name);
-  }
-  
-  if (price) {
-    updates.push('price = ?');
-    values.push(price);
-  }
-  
-  if (category) {
-    updates.push('category = ?');
-    values.push(category);
-  }
-  
-  if (updates.length === 0) {
-    return res.status(400).json({ error: 'No fields to update' });
-  }
-  
-  values.push(req.params.id);
-  
-  db.run(
-    `UPDATE database SET ${updates.join(', ')} WHERE id = ?`,
-    values,
-    function(err) {
-      if (err) {
-        return res.status(500).json({ error: err.message });
-      }
-      
-      if (this.changes === 0) {
-        return res.status(404).json({ error: 'Car not found' });
-      }
-      
-      res.json({ message: 'Car updated successfully' });
-    }
-  );
-});
-*/
-
 // Delete a car
 app.delete('/cart/:id', (req, res) => {
   db.run('DELETE FROM database WHERE id = ?', [req.params.id], function(err) {
@@ -172,36 +174,6 @@ app.delete('/cart/:id', (req, res) => {
   });
 });
 /*
-// Sample query endpoints to demonstrate different SQL queries
-app.get('/colors/search/:term', (req, res) => {
-  const searchTerm = `%${req.params.term}%`;
-  
-  db.all(
-    'SELECT * FROM database WHERE car_name LIKE ?',
-    [searchTerm],
-    (err, rows) => {
-      if (err) {
-        return res.status(500).json({ error: err.message });
-      }
-      
-      res.json(rows);
-    }
-  );
-});
-
-app.get('/colors/count/by-category', (req, res) => {
-  db.all(
-    'SELECT category, COUNT(*) as count FROM database GROUP BY category',
-    [],
-    (err, rows) => {
-      if (err) {
-        return res.status(500).json({ error: err.message });
-      }
-      
-      res.json(rows);
-    }
-  );
-});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
