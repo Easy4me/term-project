@@ -34,11 +34,13 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
     // Set up the database schema
     db.serialize(() => {
       db.run(`CREATE TABLE IF NOT EXISTS users (
-          firstname TEXT NOT NULL UNIQUE,
-          lastname TEXT NOT NULL UNIQUE,
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          firstname TEXT NOT NULL,
+          lastname TEXT NOT NULL,
           username TEXT NOT NULL UNIQUE,
-          password TEXT NOT NULL UNIQUE,
-          email TEXT,
+          password TEXT NOT NULL,
+          email TEXT NOT NULL UNIQUE,
+          cart A
           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
           )`
       , (err) => {
@@ -48,39 +50,26 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
          console.log('Database table created or already exists.');
         }
       });
-    });
-  }
-});
+  
 
-/*
-const db = new sqlite3.Database('./database.sqlite', (err) => {
-  if (err) {
-    console.error('Error opening database:', err.message);
-  } else {
-    console.log('Connected to the SQLite database.');
-   
-    // Set up the database schema
-    db.serialize(() => {
-      db.run(`CREATE TABLE IF NOT EXISTS users (
-          firstname TEXT NOT NULL UNIQUE,
-          lastname TEXT NOT NULL UNIQUE,
-          username TEXT NOT NULL UNIQUE,
-          password TEXT NOT NULL UNIQUE,
-          email TEXT,
-          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-          )`
-      , (err) => {
+     db.run(`CREATE TABLE IF NOT EXISTS cart_items (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       user_id INTEGER NOT NULL,
+       product_id INTEGER NOT NULL,
+       quantity INTEGER NOT NULL,
+       FOREIGN KEY (user_id) REFERENCES users(id),
+       FOREIGN KEY (product_id) REFERENCES products(id)
+     )`
+     , (err) => {
         if (err) {
-         console.error('Error creating table:', err.message);
+          console.error('Error creating table:', err.message);
         } else {
-         console.log('Database table created or already exists.');
+          console.log('Database table created or already exists.');
         }
       });
-    });
+   });
   }
 });
-
-*/
 
 // Create a car
 app.post('/products', (req, res) => {
@@ -193,3 +182,5 @@ process.on('SIGINT', () => {
     process.exit(0);
   });
 });
+
+module.exports = db;
