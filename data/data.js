@@ -40,7 +40,7 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
           username TEXT NOT NULL UNIQUE,
           password TEXT NOT NULL,
           email TEXT NOT NULL UNIQUE,
-          cart A
+          cart INTEGER[],
           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
           )`
       , (err) => {
@@ -49,25 +49,8 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
         } else {
          console.log('Database table created or already exists.');
         }
-      });
-  
-
-     db.run(`CREATE TABLE IF NOT EXISTS cart_items (
-       id INTEGER PRIMARY KEY AUTOINCREMENT,
-       user_id INTEGER NOT NULL,
-       product_id INTEGER NOT NULL,
-       quantity INTEGER NOT NULL,
-       FOREIGN KEY (user_id) REFERENCES users(id),
-       FOREIGN KEY (product_id) REFERENCES products(id)
-     )`
-     , (err) => {
-        if (err) {
-          console.error('Error creating table:', err.message);
-        } else {
-          console.log('Database table created or already exists.');
-        }
-      });
-   });
+      })
+    });
   }
 });
 
@@ -112,11 +95,9 @@ app.get('/products/:id', (req, res) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     }
-    
     if (!row) {
       return res.status(404).json({ error: 'Car not found' });
     }
-    
     res.json(row);
   });
 });
