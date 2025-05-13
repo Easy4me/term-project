@@ -1,0 +1,316 @@
+[
+    {
+        "shortName": "akira-bike",
+        "fullName": "Akira Motorbike",
+        "seen-in": "Akira",
+        "year": 1988,
+        "type": [
+            "motorcycle",
+            "novelty"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "batmobile-05",
+        "fullName": "Batmobile Tumbler",
+        "seen-in": "Batman Begins",
+        "year": 2005,
+        "type": [
+            "SUV",
+            "batmobile"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "batmobile-66",
+        "fullName": "The Batmobile",
+        "seen-in": "Batman: The Movie",
+        "year": 1966,
+        "type": [
+            "hot rod",
+            "batmobile"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "batmobile-89",
+        "fullName": "Burton Batmobile",
+        "seen-in": "Batman",
+        "year": 1989,
+        "type": [
+            "sport car",
+            "batmobile"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "batcycle",
+        "fullName": "Batcycle with Robin Sidecar",
+        "seen-in": "Batman: The Movie",
+        "year": 1966,
+        "type": [
+            "motorcycle",
+            "batmobile"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "batpod",
+        "fullName": "Batpod",
+        "seen-in": "The Dark Knight",
+        "year": 2008,
+        "type": [
+            "motorcycle",
+            "batmobile"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "delorean",
+        "fullName": "The Delorean Time Machine",
+        "seen-in": "Back to the Future",
+        "year": 1985,
+        "type": [
+            "sport car",
+            "novelty"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "captain-america",
+        "fullName": "Captain America Chopper",
+        "seen-in": "Easy Rider",
+        "year": 1969,
+        "type": [
+            "motorcycle"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "billy-bike",
+        "fullName": "The Billy Bike",
+        "seen-in": "Easy Rider",
+        "year": 1969,
+        "type": [
+            "motorcycle"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "goodburger",
+        "fullName": "The Burgermobile",
+        "seen-in": "Good Burger",
+        "year": 1997,
+        "type": [
+            "hot rod",
+            "novelty"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "grease",
+        "fullName": "Greased Lightning",
+        "seen-in": "Grease",
+        "year": 1978,
+        "type": [
+            "hot rod"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "herbie",
+        "fullName": "Herbie the Love Bug",
+        "seen-in": "The Love Bug",
+        "year": 1968,
+        "type": [
+            "sport car"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "invisible-car",
+        "fullName": "The Invisible Boatmobile",
+        "seen-in": "Spongebob Squarepants",
+        "year": 1999,
+        "type": [
+            "novelty"
+        ],
+        "cost": "",
+        "description": "episode: Mermaid Man & Barnacle Boy",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "jurassic-jeep",
+        "fullName": "Jurassic Park Jeep Wrangler",
+        "seen-in": "Jurassic Park",
+        "year": 1993,
+        "type": [
+            "SUV"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "mach-5",
+        "fullName": "The Mach 5",
+        "seen-in": "Speed Racer",
+        "year": 2008,
+        "type": [
+            "sport car"
+        ],
+        "cost": "",
+        "description": "manga date / anime date / cartoon date?",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "mystery-machine",
+        "fullName": "The Mystery Machine",
+        "seen-in": "Scooby-Doo",
+        "year": 1969,
+        "type": [
+            "SUV"
+        ],
+        "cost": "",
+        "description": "film is in 2002",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "prince-bike",
+        "fullName": "Prince’s Motorcycle",
+        "seen-in": "Purple Rain",
+        "year": 1984,
+        "type": [
+            "motorcycle"
+        ],
+        "cost": "",
+        "description": "modified Honda CM400A",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "shortName": "tmnt-wagon",
+        "fullName": "The Party Wagon",
+        "seen-in": "Teenage Mutant Ninja Turtles",
+        "year": 1987,
+        "type": [
+            "SUV"
+        ],
+        "cost": "",
+        "description": "",
+        "images": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    }
+]
