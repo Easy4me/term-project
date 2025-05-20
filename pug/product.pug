@@ -1,3 +1,26 @@
 extends layout 
 
 block content
+    .product
+        .product-left
+            .product-image
+                img(src=product.image, alt=`picture of ${product.name}`)
+            .product-thumbnails
+                each image in product.images
+                    img(src=image, alt=`thumbnail of ${product.name}`, class="thumbnail", onclick=`changeMainImage('${image}')`)
+
+        .product-right
+            .name
+                p= product.name
+            .seen-in
+                p= car.movie 
+                p= car.year
+            .description 
+                p= product.description
+            .price
+                p= product.price
+            .button 
+                button(type="button", onclick=`addToCart('${product.name}')`) Add to Cart
+    .see-also
+        p You may also enjoy...
+            
