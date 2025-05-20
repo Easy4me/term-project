@@ -1,18 +1,18 @@
-// app.js
-
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const path = require('path');
 
-// Tell Express to use EJS
-app.set('view engine', 'ejs');
+// use pug
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'pug'));
 
-// Optional: Set the directory for view templates
-app.set('views', './views');
+// static files (images, styles, etc) are in /PUBLIC
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Simple test route
+// index.pug is the root page
 app.get('/', (req, res) => {
-  res.send('Welcome to the E-Commerce App');
+  res.render('index');
 });
 
 // Start server

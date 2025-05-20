@@ -1,0 +1,67 @@
+extends layout
+
+block content
+  //- slideshow
+  .slideshow
+    button.prev(type="button", onclick="changeSlide(-1)") ❮
+    img#slideshow-image(src="images/product/akira_1.jpg", alt="Car slideshow", width="400")
+    button.next(type="button", onclick="changeSlide(1)") ❯
+
+  //- Filter Section
+  .product-list
+    .filters
+        h2 Filter by Type:
+        form
+            label
+                input(type="radio", name="type")
+                | Sports Cars
+            label
+                input(type="radio", name="type")
+                | Hot Rods
+            label
+                input(type="radio", name="type")
+                | SUVs
+            label
+                input(type="radio", name="type")
+                | Motorcycles
+
+    .product-grid
+        h2 All Products
+        .product-grid
+        .product
+            img(src="images/product/akira_1.jpg", alt="Kaneda's Bike")
+            h3 Kaneda's Bike
+            p $1,200,000
+            button Add to Cart
+        .product
+            img(src="images/product/bat05_1.jpg", alt="Batmobile")
+            h3 Batmobile 2005
+            p $1,500,000
+            button Add to Cart
+        .product
+            img(src="images/product/delorean_1.jpg", alt="DeLorean")
+            h3 DeLorean Time Machine
+            p $2,000,000
+            button Add to Cart
+
+  //- JavaScript for slideshow
+  script.
+    const images = [
+      "images/product/akira_1.jpg",
+      "images/product/akira_2.jpg",
+      "images/product/akira_3.jpg",
+      "images/product/bat05_1.jpg",
+      "images/product/bat05_2.jpg",
+      "images/product/bat05_3.jpg"
+    ];
+    let currentIndex = 0;
+    const slideshowImage = document.getElementById("slideshow-image");
+    function changeSlide(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = images.length - 1;
+      if (currentIndex >= images.length) currentIndex = 0;
+      slideshowImage.src = images[currentIndex];
+    }
+    setInterval(() => {
+      changeSlide(1);
+    }, 3000);
