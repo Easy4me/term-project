@@ -8,13 +8,13 @@
             "motorcycle",
             "novelty"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/akira_1.jpg",
+            "images/product/akira_2.jpg",
+            "images/product/akira_3.jpg",
+            "images/product/akira_4.jpg"
         ]
     },
     {
@@ -26,13 +26,13 @@
             "SUV",
             "batmobile"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/bat05_1.jpg",
+            "images/product/bat05_2.jpg",
+            "images/product/bat05_3.jpg",
+            "images/product/bat05_4.jpg"
         ]
     },
     {
@@ -44,13 +44,13 @@
             "hot rod",
             "batmobile"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/bat66_1.jpg",
+            "images/product/bat66_2.jpg",
+            "images/product/bat66_3.jpg",
+            "images/product/bat66_4.jpg"
         ]
     },
     {
@@ -62,13 +62,13 @@
             "sport car",
             "batmobile"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/bat89_1.jpg",
+            "images/product/bat89_2.jpg",
+            "images/product/bat89_3.jpg",
+            "images/product/bat89_4.jpg"
         ]
     },
     {
@@ -80,13 +80,13 @@
             "motorcycle",
             "batmobile"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/batcycle_1.jpg",
+            "images/product/batcycle_2.jpg",
+            "images/product/batcycle_3.jpg",
+            "images/product/batcycle_4.jpg"
         ]
     },
     {
@@ -98,13 +98,13 @@
             "motorcycle",
             "batmobile"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/batpod_1.jpg",
+            "images/product/batpod_2.jpg",
+            "images/product/batpod_3.jpg",
+            "images/product/batpod_4.jpg"
         ]
     },
     {
@@ -116,13 +116,13 @@
             "sport car",
             "novelty"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/delorean_1.jpg",
+            "images/product/delorean_2.jpg",
+            "images/product/delorean_3.jpg",
+            "images/product/delorean_4.jpg"
         ]
     },
     {
@@ -133,13 +133,13 @@
         "type": [
             "motorcycle"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/easyrider-america_1.jpg",
+            "images/product/easyrider-america_2.jpg",
+            "images/product/easyrider-america_3.jpg",
+            "images/product/easyrider-america_4.jpg"
         ]
     },
     {
@@ -150,13 +150,13 @@
         "type": [
             "motorcycle"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/easyrider-billy_1.jpg",
+            "images/product/easyrider-billy_2.jpg",
+            "images/product/easyrider-billy_3.jpg",
+            "images/product/easyrider-billy_4.jpg"
         ]
     },
     {
@@ -168,13 +168,13 @@
             "hot rod",
             "novelty"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/goodburger_1.jpg",
+            "images/product/goodburger_2.jpg",
+            "images/product/goodburger_3.jpg",
+            "images/product/goodburger_4.jpg"
         ]
     },
     {
@@ -185,13 +185,13 @@
         "type": [
             "hot rod"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/grease_1.jpg",
+            "images/product/grease_2.jpg",
+            "images/product/grease_3.jpg",
+            "images/product/grease_4.jpg"
         ]
     },
     {
@@ -202,13 +202,13 @@
         "type": [
             "sport car"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/herbie_1.jpg",
+            "images/product/herbie_2.jpg",
+            "images/product/herbie_3.jpg",
+            "images/product/herbie_4.jpg"
         ]
     },
     {
@@ -219,13 +219,13 @@
         "type": [
             "novelty"
         ],
-        "cost": "",
+        "price": "",
         "description": "episode: Mermaid Man & Barnacle Boy",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/invisible-car_1.jpg",
+            "images/product/invisible-car_2.jpg",
+            "images/product/invisible-car_3.jpg",
+            "images/product/invisible-car_4.jpg"
         ]
     },
     {
@@ -236,13 +236,13 @@
         "type": [
             "SUV"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/jeep_1.jpg",
+            "images/product/jeep_2.jpg",
+            "images/product/jeep_3.jpg",
+            "images/product/jeep_4.jpg"
         ]
     },
     {
@@ -253,13 +253,13 @@
         "type": [
             "sport car"
         ],
-        "cost": "",
+        "price": "",
         "description": "manga date / anime date / cartoon date?",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/mach5_1.jpg",
+            "images/product/mach5_2.jpg",
+            "images/product/mach5_3.jpg",
+            "images/product/mach5_4.jpg"
         ]
     },
     {
@@ -270,13 +270,13 @@
         "type": [
             "SUV"
         ],
-        "cost": "",
+        "price": "",
         "description": "film is in 2002",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/mystery_1.jpg",
+            "images/product/mystery_2.jpg",
+            "images/product/mystery_3.jpg",
+            "images/product/mystery_4.jpg"
         ]
     },
     {
@@ -287,13 +287,13 @@
         "type": [
             "motorcycle"
         ],
-        "cost": "",
+        "price": "",
         "description": "modified Honda CM400A",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/prince_1.jpg",
+            "images/product/prince_2.jpg",
+            "images/product/prince_3.jpg",
+            "images/product/prince_4.jpg"
         ]
     },
     {
@@ -304,13 +304,13 @@
         "type": [
             "SUV"
         ],
-        "cost": "",
+        "price": "",
         "description": "",
         "images": [
-            "",
-            "",
-            "",
-            ""
+            "images/product/tmnt_1.jpg",
+            "images/product/tmnt_2.jpg",
+            "images/product/tmnt_3.jpg",
+            "images/product/tmnt_4.jpg"
         ]
     }
 ]
