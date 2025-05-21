@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
 
@@ -40,7 +41,7 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
           username TEXT NOT NULL UNIQUE,
           password TEXT NOT NULL,
           email TEXT NOT NULL UNIQUE,
-          cart INTEGER[],
+          cart INTEGER [],
           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
           )`
       , (err) => {
@@ -54,104 +55,6 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
   }
 });
 
-// Create a car
-app.post('/products', (req, res) => {
-  const { id, car_name, price, category } = req.body;
-  
-  if (!car_name || !price ) {
-    return res.status(400).json({ error: 'Missing required fields' });
-  }
-  
-  db.run(
-    `INSERT INTO database (id, car_name, price, category) 
-     VALUES (?, ?, ?, ?)`,
-    [id, car_name, price, category || 'uncategorized'],
-    function(err) {
-      if (err) {
-        return res.status(500).json({ error: err.message });
-      }
-      
-      res.status(201).json({
-        id: this.lastID,
-        message: 'Car added successfully'
-      });
-    }
-  );
-});
-
-// Get all cars
-app.get('/products', (req, res) => {
-  db.all('SELECT * FROM database', [], (err, rows) => {
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
-    res.json(rows);
-  });
-});
-
-// Get a specific car
-app.get('/products/:id', (req, res) => {
-  db.get('SELECT * FROM database WHERE id = ?', [req.params.id], (err, row) => {
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
-    if (!row) {
-      return res.status(404).json({ error: 'Car not found' });
-    }
-    res.json(row);
-  });
-});
-
-// Update a car 
-app.put('/products/:id', (req, res) => {
-  const { id, car_name, price, category } = req.body;
-  
-  if (!car_name || !price ) {
-    return res.status(400).json({ error: 'Missing required fields' });
-  }
-  
-  db.run(
-    `UPDATE database 
-     SET car_name = ?, price = ?, category = ? 
-     WHERE id = ?`,
-    [car_name, price, category || 'uncategorized', req.params.id],
-    function(err) {
-      if (err) {
-        return res.status(500).json({ error: err.message });
-      }
-      
-      if (this.changes === 0) {
-        return res.status(404).json({ error: 'Car not found' });
-      }
-      
-      res.json({ message: 'Car updated successfully' });
-    }
-  );
-});
-
-// Delete a car
-app.delete('/cart/:id', (req, res) => {
-  db.run('DELETE FROM database WHERE id = ?', [req.params.id], function(err) {
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
-    
-    if (this.changes === 0) {
-      return res.status(404).json({ error: 'Car not found' });
-    }
-    
-    res.json({ message: 'Car deleted successfully' });
-  });
-});
-/*
-
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-*/
-
 // Handle process termination and cleanup
 process.on('SIGINT', () => {
   db.close((err) => {
@@ -164,4 +67,16 @@ process.on('SIGINT', () => {
   });
 });
 
-module.exports = db;
+// Export the function and the db instance
+module.exports = {
+  initializeDatabase,
+  db,
+};
+
+
+/*
+app.get('/products', (req, res) => {
+  res.send(__dirname, "./pug/index.pug")
+});
+
+*/
