@@ -11,7 +11,7 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
     console.error('Error opening database:', err.message);
   } else {
     console.log('Connected to the SQLite database.');
-   
+
     // Set up the database schema
     db.serialize(() => {
       db.run(`
@@ -44,13 +44,13 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
           cart INTEGER [],
           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
           )`
-      , (err) => {
-        if (err) {
-         console.error('Error creating table:', err.message);
-        } else {
-         console.log('Database table created or already exists.');
-        }
-      })
+        , (err) => {
+          if (err) {
+            console.error('Error creating table:', err.message);
+          } else {
+            console.log('Database table created or already exists.');
+          }
+        })
     });
   }
 });
@@ -68,10 +68,10 @@ process.on('SIGINT', () => {
 });
 
 // Export the function and the db instance
-module.exports = {
-  initializeDatabase,
-  db,
-};
+// module.exports = {
+//  initializeDatabase,                 --commenting this block out (John)
+//  db,                                   this function does not exist and throws an error
+//};       
 
 
 /*

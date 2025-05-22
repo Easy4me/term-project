@@ -32,14 +32,7 @@ block content
 
   //- JavaScript for slideshow
   script.
-    const images = [
-      "images/product/akira_1.jpg",
-      "images/product/akira_2.jpg",
-      "images/product/akira_3.jpg",
-      "images/product/bat05_1.jpg",
-      "images/product/bat05_2.jpg",
-      "images/product/bat05_3.jpg"
-    ];
+    const images = !{JSON.stringify(slideshowImages)};
     let currentIndex = 0;
     const slideshowImage = document.getElementById("slideshow-image");
     function changeSlide(direction) {

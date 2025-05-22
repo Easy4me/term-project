@@ -212,7 +212,7 @@
         ]
     },
     {
-        "shortName": "invisible-car",
+        "shortName": "invisible",
         "fullName": "The Invisible Boatmobile",
         "seen-in": "Spongebob Squarepants",
         "year": 1999,
@@ -222,10 +222,10 @@
         "price": "",
         "description": "episode: Mermaid Man & Barnacle Boy",
         "images": [
-            "images/product/invisible-car_1.jpg",
-            "images/product/invisible-car_2.jpg",
-            "images/product/invisible-car_3.jpg",
-            "images/product/invisible-car_4.jpg"
+            "images/product/invisible_1.jpg",
+            "images/product/invisible_2.jpg",
+            "images/product/invisible_3.jpg",
+            "images/product/invisible_4.jpg"
         ]
     },
     {
