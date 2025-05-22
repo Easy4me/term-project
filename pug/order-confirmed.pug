@@ -1,3 +1,15 @@
-extends layout 
+extends layout
 
 block content
+  .order-confirmed(
+    style="max-width: 600px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); text-align: center;"
+  )
+    h1 🎉 Order Confirmed!
+    p(style="font-size: 1.2rem; margin-bottom: 1rem;")
+      | Thank you for your purchase from Action! Autos.
+    p(style="margin-bottom: 1rem;")
+      | A confirmation email has been sent to your inbox.
+    a.button(
+      href="/",
+      style="margin-top: 1rem; background-color: #007acc; color: white; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none;"
+    ) ⬅ Return to Home
