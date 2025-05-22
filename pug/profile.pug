@@ -1,3 +1,15 @@
-extends layout 
+extends layout
 
 block content
+  .profile(style="max-width: 500px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);")
+    h1(style="text-align: center;") 👤 Profile Page
+
+    p
+      strong Username:
+      |  #{user.username}
+
+    p
+      strong Email:
+      |  #{user.email}
+
+    a.button(href="/logout", style="display: inline-block; margin-top: 1rem; background: #c00; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;") Logout
