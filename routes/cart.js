@@ -12,34 +12,42 @@ const updateUserCart = (userId, cart) => {
 
 // Add to cart
 router.post('/add', (req, res) => {
-  const { name, price } = req.body;
-  if (!name || !price) return res.status(400).send("Missing name or price");
+  // Accept JSON or form data
+  const car_name = req.body.car_name || req.body.name;
+  let price = req.body.price;
+
+  if (!car_name || price === undefined) return res.status(400).send("Missing car_name or price");
+
+  price = parseFloat(price);
+  if (isNaN(price)) return res.status(400).send("Invalid price");
 
   if (!req.session.cart) req.session.cart = [];
 
   const cart = req.session.cart;
-  const existing = cart.find(item => item.name === name);
+  const existing = cart.find(item => item.car_name === car_name);
 
   if (existing) {
     existing.quantity += 1;
   } else {
-    req.session.cart.push({ name, price: parseFloat(price), quantity: 1 });
+    req.session.cart.push({ car_name, price, quantity: 1 });
   }
-  
-  //If user logged in, 
+
   if (req.session.userId) {
     updateUserCart(req.session.userId, cart);
   }
 
+  // If AJAX, send JSON; else redirect
+  if (req.headers.accept && req.headers.accept.includes('application/json')) {
+    return res.json({ success: true, cart });
+  }
   res.redirect('/cart');
 });
 
 // Remove item
 router.post('/remove', (req, res) => {
-  const { name } = req.body;
-  req.session.cart = (req.session.cart || []).filter(item => item.name !== name);
+  const car_name = req.body.car_name || req.body.name;
+  req.session.cart = (req.session.cart || []).filter(item => item.car_name !== car_name);
 
-  //updated cart to DB if user is logged in
   if (req.session.userId) {
     updateUserCart(req.session.userId, req.session.cart);
   }
@@ -47,5 +55,26 @@ router.post('/remove', (req, res) => {
   res.redirect('/cart');
 });
 
+// Decrement quantity
+router.post('/decrement', (req, res) => {
+  const car_name = req.body.car_name || req.body.name;
+  if (!car_name) return res.status(400).send("Missing car_name");
+
+  if (!req.session.cart) req.session.cart = [];
+  const cart = req.session.cart;
+  const existing = cart.find(item => item.car_name === car_name);
+
+  if (existing && existing.quantity > 1) {
+    existing.quantity -= 1;
+  } else if (existing) {
+    req.session.cart = cart.filter(item => item.car_name !== car_name);
+  }
+
+  if (req.session.userId) {
+    updateUserCart(req.session.userId, req.session.cart);
+  }
+
+  res.redirect('/cart');
+});
 
 module.exports = router;

@@ -4,28 +4,20 @@ block content
   .cart-page(style="max-width: 800px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);")
     h1 🛒 Your Cart
 
+     //- DEBUG: Show raw cartItems
+    pre= JSON.stringify(cartItems, null, 2)
+
     if cartItems.length === 0
       p Your cart is currently empty.
       a.button(href="/") Continue Shopping
     else
-      table.cart-table(style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;")
-        thead
-          tr
-            th(style="text-align: left; padding: 8px; border-bottom: 1px solid #ccc;") Product
-            th(style="text-align: right; padding: 8px; border-bottom: 1px solid #ccc;") Quantity
-            th(style="text-align: right; padding: 8px; border-bottom: 1px solid #ccc;") Price
-            th(style="text-align: right; padding: 8px; border-bottom: 1px solid #ccc;") Total
-
-        tbody
-          each item in cartItems
-            tr
-              td(style="padding: 8px;")= item.name
-              td(style="text-align: right; padding: 8px;")= item.quantity
-              td(style="text-align: right; padding: 8px;") $#{item.price}
-              td(style="text-align: right; padding: 8px;") $#{item.price * item.quantity}
+      each cartItem in cartItems
+        - const car = cars.find(c => c.car_name === cartItem.car_name)
+        if car
+          include cart-card.pug
 
       h3(style="text-align: right;")
         | Subtotal: $
-        = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
+        = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0).toLocaleString()
 
       a.button(href="/checkout") Proceed to Checkout

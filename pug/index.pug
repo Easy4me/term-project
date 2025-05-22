@@ -9,7 +9,7 @@ block content
     button.next(type="button", onclick="changeSlide(1)") ❯
 
   //- Filter Section
-  .products
+  .products#products
     .filters
         h3 Filter by Type:
         form
@@ -69,4 +69,23 @@ block content
           }
         });
       });
+    });
+
+    // Auto-select radio and scroll if ?type= is present
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get('type');
+      if (type) {
+        const radio = Array.from(document.querySelectorAll('.filters input[type="radio"]'))
+          .find(r => r.value.toLowerCase() === type.toLowerCase());
+        if (radio) {
+          radio.checked = true;
+          radio.dispatchEvent(new Event('change'));
+          // Scroll to products section
+          const productsSection = document.getElementById('products');
+          if (productsSection) {
+            productsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }
     });
