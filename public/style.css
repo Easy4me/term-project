@@ -540,9 +540,9 @@ button:hover {
   height: 2em;
   font-size: 1.1em;
   border-radius: 4px;
-  border: 1px solid #222;
-  background: #111;
-  color: #fff;
+  border: 1px solid #333;
+  background: #fff;
+  color: #333;
   cursor: pointer;
   transition: background 0.2s;
 }
