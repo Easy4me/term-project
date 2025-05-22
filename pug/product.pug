@@ -1,30 +1,50 @@
 extends layout 
 
 block content
-    pre= JSON.stringify(car, null, 2)
+    - const [img1, img2, img3, img4] = car.images || []
+    //- debug line to check car object contents:
+    //- pre= JSON.stringify(car, null, 2)
     .product-field
         .product-left
             .product-image
-                if carImages && carImages.length
-                    img(src=carImages[0], alt=`picture of ${car.fullName}`)
+                if img1
+                    img#mainProductImage(src=img1, alt=`picture of ${car.fullName}`)
                 else
                     p No image available
             .product-thumbnails
-                if carImages && carImages.length
-                    each image in carImages
-                        img(src=image, alt=`thumbnail of ${car.fullName}`, class="thumbnail", onclick=`changeMainImage('${image}')`)
+                if img1
+                    img(src=img1, alt=`thumbnail 1 of ${car.fullName}`, class="thumbnail", onclick=`changeMainImage('${img1}')`)
+                if img2
+                    img(src=img2, alt=`thumbnail 2 of ${car.fullName}`, class="thumbnail", onclick=`changeMainImage('${img2}')`)
+                if img3
+                    img(src=img3, alt=`thumbnail 3 of ${car.fullName}`, class="thumbnail", onclick=`changeMainImage('${img3}')`)
+                if img4
+                    img(src=img4, alt=`thumbnail 4 of ${car.fullName}`, class="thumbnail", onclick=`changeMainImage('${img4}')`)
 
         .product-right
             .name
                 p= car.fullName
             .seen-in
-                p= car.movie
-                p= car.year
+                p
+                | seen in: 
+                b #{car.movie}
+                | , #{car.year}
             .description 
                 p= car.description
             .price
-                p= car.price
+                p $#{car.price.toLocaleString()}
             .button 
                 button(type="button", onclick=`addToCart('${car.shortName}')`) Add to Cart
     .see-also
         p You may also enjoy...
+
+block scripts
+    script.
+        function changeMainImage(src) {
+            var mainImg = document.getElementById('mainProductImage');
+            if (mainImg) {
+                mainImg.src = src;
+            }
+        }
+
+
