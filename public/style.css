@@ -8,7 +8,8 @@ body {
 }
 
 /* Header + Navigation */
-header, footer {
+header,
+footer {
   background: #222;
   color: #fff;
   padding: 1rem;
@@ -92,7 +93,7 @@ nav .nav-bottom {
 }
 
 .card:hover {
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-image {
@@ -167,7 +168,8 @@ form {
   gap: 1rem;
 }
 
-input, button {
+input,
+button {
   padding: 0.6rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -211,4 +213,128 @@ footer {
 
 .button:hover {
   background-color: #005fa3;
+}
+
+
+
+header,
+footer {
+  background: #222;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  width: 100%;
+}
+
+/* nav-top: horizontal flex for left, mid, right */
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 0;
+}
+
+/* nav-left, nav-mid, nav-right: spacing */
+.nav-left,
+.nav-mid,
+.nav-right {
+  flex: 1;
+}
+
+/* nav-mid: center content */
+.nav-mid {
+  text-align: center;
+}
+
+/* nav-right: align items to the right */
+.nav-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* nav-right ul: vertical links */
+.nav-right ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* nav-bottom: horizontal flex for links */
+.nav-bottom ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.slideshow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  position: relative;
+  /* Add this */
+  min-width: 340px;
+  /* Optional: ensures enough space for buttons + image */
+}
+
+.slideshow>img {
+  height: 300px;
+  width: auto;
+  display: block;
+}
+
+.slideshow button.prev,
+.slideshow button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  padding: 0.2em 0.5em;
+}
+
+.slideshow button.prev {
+  left: 20px;
+}
+
+.slideshow button.next {
+  right: 20px;
+}
+
+.filters {
+  padding: 10px;
+  background: #f0f0f0;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.product {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.search-bar input[type="text"] {
+  margin-right: 8px;
 }

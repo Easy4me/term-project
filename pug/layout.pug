@@ -13,17 +13,19 @@ html(lang="en")
                         a(href="/") Action! Autos
                     .nav-mid
                         p "quote"
-                        // search bar
+                        form(action="/search", method="GET", class="search-bar")
+                            input(type="text", name="q", placeholder="Search cars...")
+                            button(type="submit") Search
                     .nav-right
                         ul
                             li: a(href="/") Login
                             li: a(href="/") Cart
-                    .nav-bottom
-                        ul
-                            li: a(href="/") Sports Cars
-                            li: a(href="/") Hot Rods
-                            li: a(href="/") SUVs
-                            li: a(href="/") Motorcycles
+                .nav-bottom
+                    ul
+                        li: a(href="/") Sports Cars
+                        li: a(href="/") Hot Rods
+                        li: a(href="/") SUVs
+                        li: a(href="/") Motorcycles
 
         main
             block content
