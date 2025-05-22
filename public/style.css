@@ -463,6 +463,129 @@ button:hover {
   font-size: 1rem;
 }
 
+/* --- Cart Card Styles --- */
+.cart-card {
+  display: flex;
+  align-items: center;
+  /* Center vertically */
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  padding: 0.6em 1em;
+  /* Less vertical padding */
+  margin-bottom: 1em;
+  min-height: 80px;
+  gap: 1.5em;
+}
+
+/* Stack image and name vertically */
+.cart-card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  min-width: 180px;
+  /* Increase this value as needed */
+  width: 220px;
+  /* Add a fixed width for more space */
+  flex: 0 0 220px;
+  /* Prevent shrinking */
+}
+
+/* Enlarge thumbnail */
+.cart-thumb {
+  width: 128px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+/* Center and allow wrapping for long names */
+.cart-car-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  white-space: nowrap;
+  /* Prevent wrapping */
+  overflow: hidden;
+  /* Hide overflow */
+  text-overflow: ellipsis;
+  /* Show ... if too long */
+  max-width: 200px;
+  /* Match or slightly less than .cart-card-left width */
+  margin-top: 0.2em;
+}
+
+.cart-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  min-width: 120px;
+  flex: 1 0 120px;
+}
+
+.cart-qty-form {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+.qty-btn {
+  width: 2em;
+  height: 2em;
+  font-size: 1.1em;
+  border-radius: 4px;
+  border: 1px solid #222;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.qty-btn:hover {
+  background: #333;
+}
+
+.cart-qty {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cart-remove-form {
+  margin-top: 0.5em;
+}
+
+.remove-btn {
+  color: #c00;
+  background: none;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 0 0.3em;
+  line-height: 1;
+}
+
+.cart-total {
+  font-size: 1.1em;
+  color: #222;
+  font-weight: bold;
+  margin-top: 1.2em;
+  align-self: flex-end;
+}
+
+.cart-qty-remove-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+
 /* RESPONSIVE LAYOUT */
 @media (max-width: 768px) {
 
