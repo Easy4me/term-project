@@ -25,6 +25,9 @@ block content
             label
                 input(type="radio", name="type", value="motorcycle")
                 | Motorcycles
+            label
+                input(type="radio", name="type", value="", checked)
+                | Show All
 
     .product-grid
         h2#product-heading All Products
@@ -53,7 +56,11 @@ block content
         const selected = this.value;
         const cards = document.querySelectorAll('.card');
         const heading = document.getElementById('product-heading');
-        heading.textContent = this.parentElement.textContent.trim();
+        if (!selected) {
+          heading.textContent = "All Products";
+        } else {
+          heading.textContent = this.parentElement.textContent.trim();
+        }
         cards.forEach(card => {
           if (!selected || card.dataset.type.includes(selected)) {
             card.style.display = '';

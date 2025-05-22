@@ -179,7 +179,7 @@ main {
 /* Layout for products section */
 .products {
   display: flex;
-  gap: 2rem;
+  gap: 0.5rem;
   align-items: flex-start;
 }
 
@@ -210,7 +210,7 @@ main {
 
 .card-container {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   /* match card width */
   width: 100%;
