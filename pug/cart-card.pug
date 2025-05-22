@@ -1,0 +1,27 @@
+//- Expects: cartItem (from session cart), car (from cars.json)
+.cart-card
+  .cart-card-left
+    img.cart-thumb(src=car.images[0] || "/images/placeholder.jpg", alt=car.fullName)
+    span.cart-car-name= car.fullName
+  .cart-card-right
+    form.cart-qty-form(action="/cart/add" method="post" style="display:inline")
+      input(type="hidden" name="car_name" value=car.shortName)
+      input(type="hidden" name="price" value=cartItem.price)
+      button(type="submit" name="action" value="decrement" class="qty-btn" formaction="/cart/decrement") &minus;
+      span.cart-qty= cartItem.quantity
+      button(type="submit" name="action" value="increment" class="qty-btn") +
+    span.cart-total $#{(cartItem.price * cartItem.quantity).toLocaleString()}
+    form.cart-remove-form(action="/cart/remove" method="post" style="display:inline")
+      input(type="hidden" name="car_name" value=car.shortName)
+      button(type="submit" class="remove-btn") Remove
+
+//- Add some minimal styling for layout (optional)
+style.
+  .cart-card { display: flex; justify-content: space-between; align-items: center; padding: 1em; border-bottom: 1px solid #eee; }
+  .cart-card-left { display: flex; align-items: center; gap: 1em; }
+  .cart-thumb { width: 64px; height: 40px; object-fit: cover; border-radius: 4px; }
+  .cart-car-name { font-weight: bold; }
+  .cart-card-right { display: flex; align-items: center; gap: 1em; }
+  .cart-qty-form, .cart-remove-form { display: inline; }
+  .qty-btn { width: 2em; }
+  .remove-btn { color: #c00; background: none; border: none; cursor: pointer; }

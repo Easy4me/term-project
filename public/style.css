@@ -16,13 +16,18 @@ body {
 header {
   background: #222;
   color: #fff;
-  padding: 1rem;
+  padding: 0.5rem;
+  /* was 1rem */
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+}
+
+header.unstuck {
+  position: static !important;
 }
 
 footer {
@@ -45,7 +50,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 0.5em 0;
+  padding: 0.2em 0;
+  /* was 0.5em 0 */
 }
 
 .nav-left,
@@ -76,7 +82,8 @@ nav {
 .nav-bottom {
   display: flex;
   justify-content: center;
-  padding: 0.5rem;
+  padding-top: 0.2rem;
+  /* was 0.5rem */
 }
 
 .nav-bottom ul {
@@ -95,31 +102,38 @@ nav {
   color: white;
   text-decoration: none;
   margin: 0 0.5rem;
+  font-size: 1rem;
+  /* reduce if needed */
+  padding: 0.2em 0.4em;
 }
 
 /* SEARCH FORM */
 .nav-mid form {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  background: none;
 }
 
 .nav-mid input[type="text"] {
-  padding: 0.4rem 0.6rem;
-  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px 0 0 4px;
   border: 1px solid #ccc;
+  font-size: 1rem;
+  margin: 0;
+  height: 2.1em;
 }
 
 .nav-mid button {
-  padding: 0.4rem 0.8rem;
-  background-color: #007acc;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.nav-mid button:hover {
-  background-color: #005fa3;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0 4px 4px 0;
+  margin: 0;
+  height: 2.1em;
+  font-size: 1rem;
 }
 
 /* MAIN */
@@ -145,8 +159,12 @@ main {
 .slideshow img {
   border-radius: 8px;
   max-width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 260px;
+  /* Set a fixed height */
+  width: auto;
+  /* Allow width to adjust for aspect ratio */
+  object-fit: contain;
+  /* Show full image, preserve aspect ratio */
 }
 
 .slideshow button.prev,
@@ -170,22 +188,51 @@ main {
   right: 20px;
 }
 
-/* FILTER SECTION */
-.filters {
-  padding: 1rem;
-  background: #eaeaea;
-  text-align: center;
-  width: 100%;
+/* PRODUCT GRID & CARDS */
+
+/* Layout for products section */
+.products {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
 }
 
-/* PRODUCT GRID & CARDS */
+/* Filters on the left */
+.filters {
+  position: sticky;
+  top: 56px;
+  /* Set this to your header's height (adjust as needed) */
+  align-self: flex-start;
+  z-index: 900;
+  width: 170px;
+  min-width: 170px;
+  max-width: 170px;
+  flex: 0 0 170px;
+  padding-right: 12px;
+}
+
+.filters h3 {
+  font-size: 1rem;
+  text-align: center;
+  color: #555;
+  padding: 0.5rem;
+}
+
+/* Product grid on the right */
 .product-grid {
+  flex: 1 1 0;
+  /* take remaining space */
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.card-container {
+  display: grid;
   gap: 1rem;
-  margin: 2rem 0;
-  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* match card width */
+  width: 100%;
 }
 
 .card {
@@ -197,7 +244,7 @@ main {
   overflow: hidden;
   text-align: center;
   transition: box-shadow 0.2s ease-in-out;
-  margin: 0.5rem;
+  margin: 0;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -400,6 +447,22 @@ button:hover {
   display: inline-block;
 }
 
+/* override for form section within filter sidebar */
+.filters form {
+  margin: 0;
+  padding: 1rem;
+  box-shadow: none;
+  max-width: none;
+}
+
+.filters form label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1rem;
+}
+
 /* RESPONSIVE LAYOUT */
 @media (max-width: 768px) {
 
@@ -410,16 +473,12 @@ button:hover {
     align-items: center;
   }
 
-  .card {
-    width: 90%;
+  .nav-bottom ul {
+    gap: .2em;
   }
 
   .slideshow img {
     max-width: 90%;
-  }
-
-  form {
-    width: 90%;
   }
 
   .nav-mid form {
@@ -433,4 +492,15 @@ button:hover {
   .nav-mid button {
     width: 100%;
   }
+}
+
+@media (max-width: 700px) {
+  .product-grid {
+    justify-content: center;
+  }
+}
+
+#products {
+  scroll-margin-top: 80px;
+  /* Adjust this value to match your header height */
 }

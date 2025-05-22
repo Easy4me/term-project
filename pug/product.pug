@@ -34,11 +34,7 @@ block content
             .price
                 p $#{car.price.toLocaleString()}
             .button 
-                form(action="/cart/add", method="POST", style="display:inline;")
-                input(type="hidden", name="name", value=car.fullName)
-                input(type="hidden", name="price", value=car.price)
-                button(type="submit") Add to Cart
-
+                button(type="button", onclick=`addToCart('${car.shortName}', ${car.price})`) Add to Cart
     .see-also
         p You may also enjoy...
 
@@ -49,6 +45,31 @@ block scripts
             if (mainImg) {
                 mainImg.src = src;
             }
+        }
+
+        function addToCart(car_name, price) {
+            const formData = new URLSearchParams();
+            formData.append('car_name', car_name); // <-- use car_name
+            formData.append('price', price);
+
+            fetch('/cart/add', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'application/json'
+                },
+                body: formData,
+                credentials: 'same-origin'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Added to cart!');
+                    // Optionally update cart UI here
+                } else {
+                    alert('Failed to add to cart');
+                }
+            });
         }
 
 

@@ -7,15 +7,19 @@ const PORT = process.env.PORT || 3000;
 const cars = require('./data/cars.json'); // for front-end demo rendering
 //const db = require('./data/data.js');     
 
-const cartRouter = require('./routes/cart');
-app.use('/cart', cartRouter);  // Mount it to root so /cart/add and /cart/remove work
-
+// Middleware
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(session({
   secret: 'your-secret-key', // change this in production!
   resave: false,
   saveUninitialized: false,
   cookie: { secure: false } // set true only with HTTPS
 }));
+
+const cartRouter = require('./routes/cart');
+app.use('/cart', cartRouter);  // Mount it to root so /cart/add and /cart/remove work
 
 // SQLite connection
 const { initializeDatabase, db } = require('./data/data');
@@ -27,10 +31,6 @@ initializeDatabase();
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'pug'));
 
-// Middleware
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
 /* ---------------------------
    PUG VIEW ROUTES
@@ -57,7 +57,8 @@ app.get('/login', (req, res) => res.render('login'));
 app.get('/register', (req, res) => res.render('registration'));
 app.get('/cart', (req, res) => {
   const cartItems = req.session.cart || [];
-  res.render('cart', {cartItems});});
+  res.render('cart', { cartItems, cars });
+});
 app.get('/checkout', (req, res) => res.render('checkout'));
 app.get('/profile', (req, res) => {
   const user = { username: "Guest", email: "guest@example.com" }; // mock user
@@ -84,16 +85,16 @@ app.get('/products/:id', (req, res) => {
   db.get('SELECT * FROM database WHERE id = ?', [req.params.id], (err, row) => {
     if (err) return res.status(500).json({ error: err.message });
     if (!row) return res.status(404).json({ error: 'Car not found' });
-    
+
     if (row.cart) {
       try {
         const cartArray = JSON.parse(row.cart);
         console.log("Cart items:", cartArray);
       } catch (e) {
         console.error("Failed to parse cart JSON:", e.message);
-      } 
+      }
     }
-    
+
     res.json(row);
   });
 });
