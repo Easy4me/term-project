@@ -1,5 +1,5 @@
 //- Expects a `car` object to be passed in
-a.card(href=`/product/${car.shortName}`)
+a.card(href=`/product/${car.shortName}` data-type=car.type.join(' '))
   .card-image-wrapper
     img.card-image(src=car.images[0] || "/images/placeholder.jpg", alt=car.fullName)
   .card-info

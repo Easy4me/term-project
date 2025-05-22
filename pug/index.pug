@@ -14,20 +14,20 @@ block content
         h3 Filter by Type:
         form
             label
-                input(type="radio", name="type")
+                input(type="radio", name="type", value="sport car")
                 | Sports Cars
             label
-                input(type="radio", name="type")
+                input(type="radio", name="type", value="hot rod")
                 | Hot Rods
             label
-                input(type="radio", name="type")
+                input(type="radio", name="type", value="SUV")
                 | SUVs
             label
-                input(type="radio", name="type")
+                input(type="radio", name="type", value="motorcycle")
                 | Motorcycles
 
     .product-grid
-        h2 All Products
+        h2#product-heading All Products
         .card-container 
           each car in cars
             include card.pug
@@ -46,3 +46,20 @@ block content
     setInterval(() => {
       changeSlide(1);
     }, 5000);
+
+    // Product filtering
+    document.querySelectorAll('.filters input[type="radio"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const selected = this.value;
+        const cards = document.querySelectorAll('.card');
+        const heading = document.getElementById('product-heading');
+        heading.textContent = this.parentElement.textContent.trim();
+        cards.forEach(card => {
+          if (!selected || card.dataset.type.includes(selected)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
