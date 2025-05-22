@@ -170,22 +170,37 @@ main {
   right: 20px;
 }
 
-/* FILTER SECTION */
-.filters {
-  padding: 1rem;
-  background: #eaeaea;
-  text-align: center;
-  width: 100%;
+/* PRODUCT GRID & CARDS */
+
+/* Layout for products section */
+.products {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
 }
 
-/* PRODUCT GRID & CARDS */
+/* Filters on the left */
+.filters {
+  min-width: 180px;
+  max-width: 220px;
+  flex: 0 0 200px;
+}
+
+/* Product grid on the right */
 .product-grid {
+  flex: 1 1 0;
+  /* take remaining space */
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0;
-  padding: 0 1rem;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.card-container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* match card width */
+  width: 100%;
 }
 
 .card {
@@ -197,7 +212,7 @@ main {
   overflow: hidden;
   text-align: center;
   transition: box-shadow 0.2s ease-in-out;
-  margin: 0.5rem;
+  margin: 0;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -410,10 +425,6 @@ button:hover {
     align-items: center;
   }
 
-  .card {
-    width: 90%;
-  }
-
   .slideshow img {
     max-width: 90%;
   }
@@ -432,5 +443,11 @@ button:hover {
   .nav-mid input[type="text"],
   .nav-mid button {
     width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .product-grid {
+    justify-content: center;
   }
 }
