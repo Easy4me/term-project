@@ -8,8 +8,8 @@
             "motorcycle",
             "novelty"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 120000,
+        "description": "The infamous and flashy red motorcycle from the classic anime Akira. This bike is a replica of the one ridden by Kaneda in the landmark animated film, and features a sleek design and powerful engine. With its futuristic look and high-performance capabilities, this bike is sure to turn heads on the road.",
         "images": [
             "images/product/akira_1.jpg",
             "images/product/akira_2.jpg",
@@ -26,8 +26,8 @@
             "SUV",
             "batmobile"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 200000,
+        "description": "They said it couldn't be done, but we did it. We built a Tumbler replica you can actually drive! This is the Batmobile from the 2005 film Batman Begins, and it can take a punch! An offroad-ready SUV chassis hides beneath the sleek, black armor, ready to handle any drive you can imagine. Become the Dark Knight!",
         "images": [
             "images/product/bat05_1.jpg",
             "images/product/bat05_2.jpg",
@@ -44,8 +44,8 @@
             "hot rod",
             "batmobile"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 150000,
+        "description": "The original iconic Batmobile from the 1966 film Batman: The Movie. This classic car is a true piece of cinematic history. The original Batmobile was fashioned from the 1955 Lincoln Futura concept car, which we have adhered to in our replica as closely as possible. This is a rare gem, folks.",
         "images": [
             "images/product/bat66_1.jpg",
             "images/product/bat66_2.jpg",
@@ -62,8 +62,8 @@
             "sport car",
             "batmobile"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 160000,
+        "description": "This model of Batmobile is immediately recognizable. There's no mistaking that it belongs to the Batman. This version was featured in Tim Burton's 1989 Batman and sequel Batman Returns, cult classic films featuring unforgettable performances by legendary actors Michael Keaton, Jack Nicholson, Michelle Pfeiffer, Danny Devito, and Christopher Walken. This one is for the movie buffs.",
         "images": [
             "images/product/bat89_1.jpg",
             "images/product/bat89_2.jpg",
@@ -80,8 +80,8 @@
             "motorcycle",
             "batmobile"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 80000,
+        "description": "This old-school Batcycle features Robin's iconic sidecar—which can also drive all on it's own! This is the perfect choice for any dynamic duo's night on the town, or daytime drive.",
         "images": [
             "images/product/batcycle_1.jpg",
             "images/product/batcycle_2.jpg",
@@ -98,8 +98,8 @@
             "motorcycle",
             "batmobile"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 90000,
+        "description": "Buyer beware: this bike is not for the faint of heart! The aggressive riding posture demands athleticism and skill from its driver, but the rewards are oh so sweet. This dramatic design allows for exhilirating speeds!",
         "images": [
             "images/product/batpod_1.jpg",
             "images/product/batpod_2.jpg",
@@ -116,8 +116,8 @@
             "sport car",
             "novelty"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 180000,
+        "description": "We spent a lot of time on this one. It's fully loaded with all the bells, whistles, and lights including the iconic flux capacitor which illuminates the interior. And, it's a real DeLorean. You'll be hitting 88 miles per hour in no time!",
         "images": [
             "images/product/delorean_1.jpg",
             "images/product/delorean_2.jpg",
@@ -133,8 +133,8 @@
         "type": [
             "motorcycle"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 40000,
+        "description": "The classic chopper, with red, white, & blue paint job as seen in the 1969 film Easy Rider. This bike is a replica of the one ridden by Peter Fonda as \"Captain America\". Easy rides, guaranteed.",
         "images": [
             "images/product/easyrider-america_1.jpg",
             "images/product/easyrider-america_2.jpg",
@@ -150,8 +150,8 @@
         "type": [
             "motorcycle"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 40000,
+        "description": "The classic chopper with iconic flames, as seen in the 1969 film Easy Rider. This bike is a replica of the one ridden by Dennis Hopper as \"Billy\". Easy rides, guaranteed.",
         "images": [
             "images/product/easyrider-billy_1.jpg",
             "images/product/easyrider-billy_2.jpg",
@@ -168,8 +168,8 @@
             "hot rod",
             "novelty"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 100000,
+        "description": "The unforgettable Burgermobile from the hit 1997 film Good Burger, starring Kel Mitchell and Kenan Thomspon. This ride is sure to get any conversation going. Just picture what shenanigans you and your friends could get up to in this car!",
         "images": [
             "images/product/goodburger_1.jpg",
             "images/product/goodburger_2.jpg",
@@ -185,8 +185,8 @@
         "type": [
             "hot rod"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 110000,
+        "description": "An exact replica of the iconic hot rod from the 1978 film Grease. This car is a true piece of cinematic history, and is sure to turn heads wherever you go. With its sleek design and powerful engine, this car is perfect for cruising around town or hitting the open road.",
         "images": [
             "images/product/grease_1.jpg",
             "images/product/grease_2.jpg",
@@ -202,8 +202,8 @@
         "type": [
             "sport car"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 50000,
+        "description": "A timeless classic, Herbie the Love Bug is a 1963 Volkswagen Beetle with a personality of its own. This car is perfect for anyone who loves classic cars and wants to own a piece of movie history.",
         "images": [
             "images/product/herbie_1.jpg",
             "images/product/herbie_2.jpg",
@@ -219,8 +219,8 @@
         "type": [
             "novelty"
         ],
-        "price": "5000",
-        "description": "episode: Mermaid Man & Barnacle Boy",
+        "price": 150000,
+        "description": "Yes. Oh yes. We found a way to wrap this car for an ultimately convincing \"invisible\" look. It could be any car you might imagine, but is originally based on the iconic Invisible Boatmobile first seen in the Spongbob Squarepants episode: Mermaid Man & Barnacle Boy",
         "images": [
             "images/product/invisible_1.jpg",
             "images/product/invisible_2.jpg",
@@ -236,8 +236,8 @@
         "type": [
             "SUV"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 50000,
+        "description": "We have taken meticulous care to paint every detail onto this replica Jeep Wrangler. An adventure awaits you in this car, just be mindful of any closed off areas or suspiciously high gates and fences. Insurance policies commonly do not cover dinosaur attacks.",
         "images": [
             "images/product/jeep_1.jpg",
             "images/product/jeep_2.jpg",
@@ -253,8 +253,8 @@
         "type": [
             "sport car"
         ],
-        "price": "5000",
-        "description": "manga date / anime date / cartoon date?",
+        "price": 160000,
+        "description": "Speed away in the Mach 5, the iconic car from the classic 1967 anime Speed Racer. Our replica is modeled after the car featured in the 2008 live-action film, which starred Emile Hirsch as Speed Racer. Grab a matching helmet and you'll be racing away Speed Racer style. Look at those sleek lines and that iconic color scheme!",
         "images": [
             "images/product/mach5_1.jpg",
             "images/product/mach5_2.jpg",
@@ -270,8 +270,8 @@
         "type": [
             "SUV"
         ],
-        "price": "5000",
-        "description": "film is in 2002",
+        "price": 80000,
+        "description": "The unforgettable Mystery Machine from the classic animated series Scooby-Doo. This van is a true piece of pop culture history. You can fit the whole gang into this ride for any adventure. Jinkies!",
         "images": [
             "images/product/mystery_1.jpg",
             "images/product/mystery_2.jpg",
@@ -287,8 +287,8 @@
         "type": [
             "motorcycle"
         ],
-        "price": "5000",
-        "description": "modified Honda CM400A",
+        "price": 60000,
+        "description": "The iconic motorbike from the 1984 film Purple Rain, starring Prince. This bike is a true piece of pop culture history, and is sure to turn heads wherever you go. Just look at that style!",
         "images": [
             "images/product/prince_1.jpg",
             "images/product/prince_2.jpg",
@@ -304,8 +304,8 @@
         "type": [
             "SUV"
         ],
-        "price": "5000",
-        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
+        "price": 90000,
+        "description": "Equipped for any adventure, this is the Party Wagon from the classic animated series Teenage Mutant Ninja Turtles. Load up the crew for pizza night. Cowabunga!",
         "images": [
             "images/product/tmnt_1.jpg",
             "images/product/tmnt_2.jpg",
