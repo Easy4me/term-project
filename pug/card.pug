@@ -1,6 +1,7 @@
 //- Expects a `car` object to be passed in
 a.card(href=`/product/${car.shortName}`)
-  img.card-image(src=car.images[0] || "/images/placeholder.jpg", alt=car.fullName)
+  .card-image-wrapper
+    img.card-image(src=car.images[0] || "/images/placeholder.jpg", alt=car.fullName)
   .card-info
     p.card-name= car.fullName
-    p.card-price= car.price
+    p.card-price $#{car.price.toLocaleString()}
