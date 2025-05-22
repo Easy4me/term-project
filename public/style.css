@@ -173,11 +173,21 @@ main {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  background: rgba(255, 255, 255, 0.8);
+  background: #fff;         /* White background */
+  color: #222;              /* Dark gray symbol */
   border: none;
   font-size: 2em;
   cursor: pointer;
   padding: 0.2em 0.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.slideshow button.prev:hover,
+.slideshow button.next:hover {
+  background: #eee;
+  color: #111;
 }
 
 .slideshow button.prev {

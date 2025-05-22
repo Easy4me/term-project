@@ -5,7 +5,8 @@ block content
   //- slideshow
   .slideshow
     button.prev(type="button", onclick="changeSlide(-1)") ❮
-    img#slideshow-image(src="images/product/akira_1.jpg", alt="Car slideshow", width="400")
+    a#slideshow-link(href=`/product/${cars[0].shortName}`)
+      img#slideshow-image(src=slideshowImages[0], alt="Car slideshow", width="400")
     button.next(type="button", onclick="changeSlide(1)") ❯
 
   //- Filter Section
@@ -38,13 +39,16 @@ block content
   //- JavaScript for slideshow
   script.
     const images = !{JSON.stringify(slideshowImages)};
+    const links = !{JSON.stringify(cars.map(car => `/product/${car.shortName}`))};
     let currentIndex = 0;
     const slideshowImage = document.getElementById("slideshow-image");
+    const slideshowLink = document.getElementById("slideshow-link");
     function changeSlide(direction) {
       currentIndex += direction;
       if (currentIndex < 0) currentIndex = images.length - 1;
       if (currentIndex >= images.length) currentIndex = 0;
       slideshowImage.src = images[currentIndex];
+      slideshowLink.href = links[currentIndex];
     }
     setInterval(() => {
       changeSlide(1);
