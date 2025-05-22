@@ -1,20 +1,17 @@
 extends layout
 
+include mixins/cart-card.pug
+
 block content
   .cart-page(style="max-width: 800px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);")
     h1 🛒 Your Cart
-
-     //- DEBUG: Show raw cartItems
-    pre= JSON.stringify(cartItems, null, 2)
 
     if cartItems.length === 0
       p Your cart is currently empty.
       a.button(href="/") Continue Shopping
     else
       each cartItem in cartItems
-        - const car = cars.find(c => c.car_name === cartItem.car_name)
-        if car
-          include cart-card.pug
+        +cartCard(cartItem, cars)
 
       h3(style="text-align: right;")
         | Subtotal: $
