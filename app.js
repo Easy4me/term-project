@@ -38,6 +38,7 @@ app.get('/product/:shortName', (req, res) => {
   if (!car || !Array.isArray(car.images) || car.images.length === 0) {
     return res.status(404).send('404: product not found!');
   }
+<<<<<<< HEAD
 
   const product = {
     name: car.fullName,
@@ -51,6 +52,10 @@ app.get('/product/:shortName', (req, res) => {
     year: car.year
   };
   res.render('product', { product, car: carMeta });
+=======
+  const carImages = car.images;
+  res.render('product', { car, carImages });
+>>>>>>> 525df92d06bc78f2724274bfe1cd4d49355f0094
 });
 
 // Static pages
