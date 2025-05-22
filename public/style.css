@@ -145,8 +145,12 @@ main {
 .slideshow img {
   border-radius: 8px;
   max-width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 260px;
+  /* Set a fixed height */
+  width: auto;
+  /* Allow width to adjust for aspect ratio */
+  object-fit: contain;
+  /* Show full image, preserve aspect ratio */
 }
 
 .slideshow button.prev,
@@ -181,9 +185,18 @@ main {
 
 /* Filters on the left */
 .filters {
-  min-width: 180px;
-  max-width: 220px;
-  flex: 0 0 200px;
+  width: 170px;
+  min-width: 170px;
+  max-width: 170px;
+  flex: 0 0 170px;
+  padding-right: 12px;
+}
+
+.filters h3 {
+  font-size: 1rem;
+  text-align: center;
+  color: #555;
+  padding: 0.5rem;
 }
 
 /* Product grid on the right */
@@ -415,6 +428,22 @@ button:hover {
   display: inline-block;
 }
 
+/* override for form section within filter sidebar */
+.filters form {
+  margin: 0;
+  padding: 1rem;
+  box-shadow: none;
+  max-width: none;
+}
+
+.filters form label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1rem;
+}
+
 /* RESPONSIVE LAYOUT */
 @media (max-width: 768px) {
 
@@ -427,10 +456,6 @@ button:hover {
 
   .slideshow img {
     max-width: 90%;
-  }
-
-  form {
-    width: 90%;
   }
 
   .nav-mid form {
