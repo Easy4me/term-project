@@ -2,7 +2,7 @@
     {
         "shortName": "akira-bike",
         "fullName": "Akira Motorbike",
-        "seen-in": "Akira",
+        "movie": "Akira",
         "year": 1988,
         "type": [
             "motorcycle",
@@ -20,7 +20,7 @@
     {
         "shortName": "batmobile-05",
         "fullName": "Batmobile Tumbler",
-        "seen-in": "Batman Begins",
+        "movie": "Batman Begins",
         "year": 2005,
         "type": [
             "SUV",
@@ -38,7 +38,7 @@
     {
         "shortName": "batmobile-66",
         "fullName": "The Batmobile",
-        "seen-in": "Batman: The Movie",
+        "movie": "Batman: The Movie",
         "year": 1966,
         "type": [
             "hot rod",
@@ -56,7 +56,7 @@
     {
         "shortName": "batmobile-89",
         "fullName": "Burton Batmobile",
-        "seen-in": "Batman",
+        "movie": "Batman",
         "year": 1989,
         "type": [
             "sport car",
@@ -74,7 +74,7 @@
     {
         "shortName": "batcycle",
         "fullName": "Batcycle with Robin Sidecar",
-        "seen-in": "Batman: The Movie",
+        "movie": "Batman: The Movie",
         "year": 1966,
         "type": [
             "motorcycle",
@@ -92,7 +92,7 @@
     {
         "shortName": "batpod",
         "fullName": "Batpod",
-        "seen-in": "The Dark Knight",
+        "movie": "The Dark Knight",
         "year": 2008,
         "type": [
             "motorcycle",
@@ -110,7 +110,7 @@
     {
         "shortName": "delorean",
         "fullName": "The Delorean Time Machine",
-        "seen-in": "Back to the Future",
+        "movie": "Back to the Future",
         "year": 1985,
         "type": [
             "sport car",
@@ -128,7 +128,7 @@
     {
         "shortName": "captain-america",
         "fullName": "Captain America Chopper",
-        "seen-in": "Easy Rider",
+        "movie": "Easy Rider",
         "year": 1969,
         "type": [
             "motorcycle"
@@ -145,7 +145,7 @@
     {
         "shortName": "billy-bike",
         "fullName": "The Billy Bike",
-        "seen-in": "Easy Rider",
+        "movie": "Easy Rider",
         "year": 1969,
         "type": [
             "motorcycle"
@@ -162,7 +162,7 @@
     {
         "shortName": "goodburger",
         "fullName": "The Burgermobile",
-        "seen-in": "Good Burger",
+        "movie": "Good Burger",
         "year": 1997,
         "type": [
             "hot rod",
@@ -180,7 +180,7 @@
     {
         "shortName": "grease",
         "fullName": "Greased Lightning",
-        "seen-in": "Grease",
+        "movie": "Grease",
         "year": 1978,
         "type": [
             "hot rod"
@@ -197,7 +197,7 @@
     {
         "shortName": "herbie",
         "fullName": "Herbie the Love Bug",
-        "seen-in": "The Love Bug",
+        "movie": "The Love Bug",
         "year": 1968,
         "type": [
             "sport car"
@@ -212,9 +212,9 @@
         ]
     },
     {
-        "shortName": "invisible-car",
+        "shortName": "invisible",
         "fullName": "The Invisible Boatmobile",
-        "seen-in": "Spongebob Squarepants",
+        "movie": "Spongebob Squarepants",
         "year": 1999,
         "type": [
             "novelty"
@@ -222,16 +222,16 @@
         "price": "",
         "description": "episode: Mermaid Man & Barnacle Boy",
         "images": [
-            "images/product/invisible-car_1.jpg",
-            "images/product/invisible-car_2.jpg",
-            "images/product/invisible-car_3.jpg",
-            "images/product/invisible-car_4.jpg"
+            "images/product/invisible_1.jpg",
+            "images/product/invisible_2.jpg",
+            "images/product/invisible_3.jpg",
+            "images/product/invisible_4.jpg"
         ]
     },
     {
         "shortName": "jurassic-jeep",
         "fullName": "Jurassic Park Jeep Wrangler",
-        "seen-in": "Jurassic Park",
+        "movie": "Jurassic Park",
         "year": 1993,
         "type": [
             "SUV"
@@ -248,7 +248,7 @@
     {
         "shortName": "mach-5",
         "fullName": "The Mach 5",
-        "seen-in": "Speed Racer",
+        "movie": "Speed Racer",
         "year": 2008,
         "type": [
             "sport car"
@@ -265,7 +265,7 @@
     {
         "shortName": "mystery-machine",
         "fullName": "The Mystery Machine",
-        "seen-in": "Scooby-Doo",
+        "movie": "Scooby-Doo",
         "year": 1969,
         "type": [
             "SUV"
@@ -282,7 +282,7 @@
     {
         "shortName": "prince-bike",
         "fullName": "Prince’s Motorcycle",
-        "seen-in": "Purple Rain",
+        "movie": "Purple Rain",
         "year": 1984,
         "type": [
             "motorcycle"
@@ -299,7 +299,7 @@
     {
         "shortName": "tmnt-wagon",
         "fullName": "The Party Wagon",
-        "seen-in": "Teenage Mutant Ninja Turtles",
+        "movie": "Teenage Mutant Ninja Turtles",
         "year": 1987,
         "type": [
             "SUV"

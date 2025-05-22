@@ -29,7 +29,7 @@ function initializeDatabase() {
        if (err) {
          console.error('Error creating table:', err.message);
        } else {
-         console.log('Database table created or already exists.');
+         console.log('Database table: database, created or already exists.');
        }
     });
   });
@@ -50,7 +50,7 @@ function initializeDatabase() {
        if (err) {
         console.error('Error creating table:', err.message);
        } else {
-        console.log('Database table created or already exists.');
+        console.log('Database table: users, created or already exists.');
        }
     });
   }); 
