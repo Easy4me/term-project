@@ -5,10 +5,14 @@ block content
     .product-field
         .product-left
             .product-image
-                img(src=car.images[0], alt=`picture of ${car.fullName}`)
+                if carImages && carImages.length
+                    img(src=carImages[0], alt=`picture of ${car.fullName}`)
+                else
+                    p No image available
             .product-thumbnails
-                each image in car.images
-                    img(src=image, alt=`thumbnail of ${car.fullName}`, class="thumbnail", onclick=`changeMainImage('${image}')`)
+                if carImages && carImages.length
+                    each image in carImages
+                        img(src=image, alt=`thumbnail of ${car.fullName}`, class="thumbnail", onclick=`changeMainImage('${image}')`)
 
         .product-right
             .name

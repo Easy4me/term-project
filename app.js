@@ -38,18 +38,8 @@ app.get('/product/:shortName', (req, res) => {
   if (!car) {
     return res.status(404).send('404: product not found!');
   }
-  const product = {
-    name: car.fullName,
-    image: car.images[0],
-    images: car.images,
-    price: car.price || "$0",
-    description: car.description || "A classic movie car."
-  };
-  const carMeta = {
-    movie: car['seen-in'],
-    year: car.year
-  };
-  res.render('product', { product, car: carMeta });
+  const carImages = car.images;
+  res.render('product', { car, carImages });
 });
 
 // Static pages
