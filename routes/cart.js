@@ -12,6 +12,7 @@ const updateUserCart = (userId, cart) => {
 
 // Add to cart
 router.post('/add', (req, res) => {
+  console.log('POST /cart/add hit', req.body); // <--- Add this
   // Accept JSON or form data
   const car_name = req.body.car_name || req.body.name;
   let price = req.body.price;
@@ -35,6 +36,7 @@ router.post('/add', (req, res) => {
   if (req.session.userId) {
     updateUserCart(req.session.userId, cart);
   }
+  console.log('Session cart after add:', req.session.cart); // <-- Add this line
 
   // If AJAX, send JSON; else redirect
   if (req.headers.accept && req.headers.accept.includes('application/json')) {
