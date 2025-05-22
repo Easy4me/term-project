@@ -55,7 +55,9 @@ app.get('/product/:shortName', (req, res) => {
 // Static pages
 app.get('/login', (req, res) => res.render('login'));
 app.get('/register', (req, res) => res.render('registration'));
-app.get('/cart', (req, res) => res.render('cart'));
+app.get('/cart', (req, res) => {
+  const cartItems = req.session.cart || [];
+  res.render('cart', {cartItems});});
 app.get('/checkout', (req, res) => res.render('checkout'));
 app.get('/profile', (req, res) => {
   const user = { username: "Guest", email: "guest@example.com" }; // mock user
