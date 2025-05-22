@@ -1,38 +1,38 @@
 doctype html
 html(lang="en")
-    head
-        link(rel="stylesheet", href="/style.css")
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-    body 
-        header
-            nav
-                .nav-top
-                    .nav-left
-                        a(href="/") Action! Autos
-                    .nav-mid
-                        form(action="/search", method="GET", class="search-bar")
-                            input(type="text", name="q", placeholder="Search cars...")
-                            button(type="submit") Search
-                    .nav-right
-                        ul
-                            li: a(href="/") Login
-                            li: a(href="/") Cart
-                .nav-bottom
-                    ul
-                        li: a(href="/") Sports Cars
-                        li: a(href="/") Hot Rods
-                        li: a(href="/") SUVs
-                        li: a(href="/") Motorcycles
+  head
+    title Action! Autos – Movie-Inspired Cars
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/style.css")
+  body
+    header
+      nav(role="navigation" aria-label="Main navigation")
+        .nav-top
+          .nav-left
+            a(href="/") Action! Autos
+          .nav-mid
+            form(action="/search", method="GET", class="search-bar")
+              input(type="text", name="q", placeholder="Search cars...", aria-label="Search")
+              button(type="submit") Search
+          .nav-right
+            ul
+              li: a(href="/login") Login
+              li: a(href="/cart") Cart
+        .nav-bottom
+          ul
+            li: a(href="/?q=sport+car") Sports Cars
+            li: a(href="/?q=hot+rod") Hot Rods
+            li: a(href="/?q=suv") SUVs
+            li: a(href="/?q=motorcycle") Motorcycles
 
-        main
-            block content
+    main
+      block content
 
-        footer
-            .footer-left 
-                a(href="/") About Us / FAQ
-            .footer-right
-                p &copy; #{new Date().getFullYear()} Action! Autos
+    footer
+      .footer-left
+        a(href="/about") About Us / FAQ
+      .footer-right
+        p &copy; #{year || new Date().getFullYear()} Action! Autos
 
-        block scripts
+    block scripts
