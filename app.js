@@ -35,9 +35,10 @@ app.get('/', (req, res) => {
 // Product detail page
 app.get('/product/:shortName', (req, res) => {
   const car = cars.find(c => c.shortName === req.params.shortName);
-  if (!car) {
+  if (!car || !Array.isArray(car.images) || car.images.length === 0) {
     return res.status(404).send('404: product not found!');
   }
+
   const product = {
     name: car.fullName,
     image: car.images[0],
@@ -78,6 +79,12 @@ app.get('/products', (req, res) => {
 
 // Get one car by ID
 app.get('/products/:id', (req, res) => {
+
+  if (row && row.cart) {
+    const cartArray = JSON.parse(row.cart);
+    console.log("Cart items:", cartArray); 
+  }
+
   db.get('SELECT * FROM database WHERE id = ?', [req.params.id], (err, row) => {
     if (err) return res.status(500).json({ error: err.message });
     if (!row) return res.status(404).json({ error: 'Car not found' });

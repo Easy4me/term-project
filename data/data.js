@@ -43,7 +43,7 @@ function initializeDatabase() {
         username TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
-        cart INTEGER [],
+        cart TEXT,      
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )`
       , (err) => {
