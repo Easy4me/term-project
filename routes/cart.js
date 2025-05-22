@@ -1,6 +1,12 @@
+const express = require('express');
+const router = express.Router();
+
+
 // Add to cart
 router.post('/cart/add', (req, res) => {
   const { name, price } = req.body;
+  if (!name || !price) return res.status(400).send("Missing name or price");
+
   if (!req.session.cart) req.session.cart = [];
 
   const cart = req.session.cart;
@@ -9,7 +15,7 @@ router.post('/cart/add', (req, res) => {
   if (existing) {
     existing.quantity += 1;
   } else {
-    cart.push({ name, price, quantity: 1 });
+    req.session.cart.push({ name, price: parseFloat(price), quantity: 1 });
   }
 
   res.redirect('/cart');
@@ -21,3 +27,6 @@ router.post('/cart/remove', (req, res) => {
   req.session.cart = (req.session.cart || []).filter(item => item.name !== name);
   res.redirect('/cart');
 });
+
+
+module.exports = router;

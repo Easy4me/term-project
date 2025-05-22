@@ -6,6 +6,9 @@ const PORT = process.env.PORT || 3000;
 const cars = require('./data/cars.json'); // for front-end demo rendering
 //const db = require('./data/data.js');     
 
+const cartRouter = require('./routes/cart');
+app.use('/', cartRouter);  // Mount it to root so /cart/add and /cart/remove work
+
 
 // SQLite connection
 const { initializeDatabase, db } = require('./data/data');
@@ -38,24 +41,8 @@ app.get('/product/:shortName', (req, res) => {
   if (!car || !Array.isArray(car.images) || car.images.length === 0) {
     return res.status(404).send('404: product not found!');
   }
-<<<<<<< HEAD
-
-  const product = {
-    name: car.fullName,
-    image: car.images[0],
-    images: car.images,
-    price: car.price || "$0",
-    description: car.description || "A classic movie car."
-  };
-  const carMeta = {
-    movie: car['seen-in'],
-    year: car.year
-  };
-  res.render('product', { product, car: carMeta });
-=======
   const carImages = car.images;
   res.render('product', { car, carImages });
->>>>>>> 525df92d06bc78f2724274bfe1cd4d49355f0094
 });
 
 // Static pages
@@ -93,6 +80,16 @@ app.get('/products/:id', (req, res) => {
   db.get('SELECT * FROM database WHERE id = ?', [req.params.id], (err, row) => {
     if (err) return res.status(500).json({ error: err.message });
     if (!row) return res.status(404).json({ error: 'Car not found' });
+    
+    if (row.cart) {
+      try {
+        const cartArray = JSON.parse(row.cart);
+        console.log("Cart items:", cartArray);
+      } catch (e) {
+        console.error("Failed to parse cart JSON:", e.message);
+      }
+    }
+    
     res.json(row);
   });
 });
