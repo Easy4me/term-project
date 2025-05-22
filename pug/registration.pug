@@ -4,7 +4,13 @@ block content
   .registration-form(style="max-width: 500px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);")
     h1(style="text-align: center;") Create an Account
 
-    form(action="/register", method="POST")
+    form(action="/registration", method="POST")
+      label(for="firstname") First Name:
+      input#firstname(type="text", name="firstname", required)
+
+      label(for="lastname") Last Name:
+       input#lastname(type="text", name="lastname", required)
+       
       label(for="username") Username:
       input#username(type="text", name="username", required)
 

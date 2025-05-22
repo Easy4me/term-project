@@ -5,7 +5,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const cars = require('./data/cars.json'); // for front-end demo rendering
-//const db = require('./data/data.js');     
+app.use(express.urlencoded({ extended: true }));   
+const registerRouter = require('./routes/registration');
+app.use('/registration', registerRouter);
+
 
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
@@ -54,7 +57,8 @@ app.get('/product/:shortName', (req, res) => {
 
 // Static pages
 app.get('/login', (req, res) => res.render('login'));
-app.get('/register', (req, res) => res.render('registration'));
+app.get('/registration', (req, res) => {
+  res.render('registration')});
 app.get('/cart', (req, res) => {
   const cartItems = req.session.cart || [];
   res.render('cart', { cartItems, cars });
@@ -66,6 +70,12 @@ app.get('/profile', (req, res) => {
 });
 app.get('/about', (req, res) => res.render('about-faq'));
 app.get('/order-confirmed', (req, res) => res.render('order-confirmed'));
+
+
+app.post('/user', (req, res) => {
+  const user = { username,  email } = req.body;
+  res.render('/profile', {user});
+});
 
 /* ---------------------------
    PRODUCTS API (DATABASE)
