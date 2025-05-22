@@ -11,49 +11,50 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
     console.error('Error opening database:', err.message);
   } else {
     console.log('Connected to the SQLite database.');
-   
-    // Set up the database schema
-    db.serialize(() => {
-      db.run(`
-        CREATE TABLE IF NOT EXISTS database (
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
-          car_name TEXT NOT NULL UNIQUE,
-          price INTEGER,
-          description TEXT,
-          category TEXT DEFAULT 'uncategorized',
-          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
-      `, (err) => {
-        if (err) {
-          console.error('Error creating table:', err.message);
-        } else {
-          console.log('Database table created or already exists.');
-        }
-      });
-    });
-
-    // Set up the database schema
-    db.serialize(() => {
-      db.run(`CREATE TABLE IF NOT EXISTS users (
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
-          firstname TEXT NOT NULL,
-          lastname TEXT NOT NULL,
-          username TEXT NOT NULL UNIQUE,
-          password TEXT NOT NULL,
-          email TEXT NOT NULL UNIQUE,
-          cart INTEGER [],
-          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-          )`
-      , (err) => {
-        if (err) {
-         console.error('Error creating table:', err.message);
-        } else {
-         console.log('Database table created or already exists.');
-        }
-      })
-    });
   }
 });
+  
+function initializeDatabase() {
+  db.serialize(() => {
+    db.run(`
+        CREATE TABLE IF NOT EXISTS database (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        car_name TEXT NOT NULL UNIQUE,
+        price INTEGER,
+        description TEXT,
+        category TEXT DEFAULT 'uncategorized',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+       )
+    `, (err) => {
+       if (err) {
+         console.error('Error creating table:', err.message);
+       } else {
+         console.log('Database table created or already exists.');
+       }
+    });
+  });
+
+      // Set up the database schema
+  db.serialize(() => {
+    db.run(`CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        firstname TEXT NOT NULL,
+        lastname TEXT NOT NULL,
+        username TEXT NOT NULL UNIQUE,
+        password TEXT NOT NULL,
+        email TEXT NOT NULL UNIQUE,
+        cart INTEGER [],
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )`
+      , (err) => {
+       if (err) {
+        console.error('Error creating table:', err.message);
+       } else {
+        console.log('Database table created or already exists.');
+       }
+    });
+  }); 
+};
 
 // Handle process termination and cleanup
 process.on('SIGINT', () => {
@@ -72,11 +73,3 @@ module.exports = {
   initializeDatabase,
   db,
 };
-
-
-/*
-app.get('/products', (req, res) => {
-  res.send(__dirname, "./pug/index.pug")
-});
-
-*/

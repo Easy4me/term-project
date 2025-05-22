@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const path = require('path');
 const cars = require('./data/cars.json');
-const { initializeDatabase, db } = require('./data');
+const { initializeDatabase, db } = require('./data/data');
 
 // use pug
 app.set('view engine', 'pug');
@@ -124,7 +124,7 @@ app.listen(PORT, () => {
 });
 
 
-const sqlite3 = require('sqlite3').verbose();
+//const sqlite3 = require('sqlite3').verbose();
 
 // Connect to (or create) the database file
-const db = new sqlite3.Database('mydatabase.db');
+//const db = new sqlite3.Database('mydatabase.db');
