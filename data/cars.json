@@ -8,8 +8,8 @@
             "motorcycle",
             "novelty"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/akira_1.jpg",
             "images/product/akira_2.jpg",
@@ -26,8 +26,8 @@
             "SUV",
             "batmobile"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/bat05_1.jpg",
             "images/product/bat05_2.jpg",
@@ -44,8 +44,8 @@
             "hot rod",
             "batmobile"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/bat66_1.jpg",
             "images/product/bat66_2.jpg",
@@ -62,8 +62,8 @@
             "sport car",
             "batmobile"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/bat89_1.jpg",
             "images/product/bat89_2.jpg",
@@ -80,8 +80,8 @@
             "motorcycle",
             "batmobile"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/batcycle_1.jpg",
             "images/product/batcycle_2.jpg",
@@ -98,8 +98,8 @@
             "motorcycle",
             "batmobile"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/batpod_1.jpg",
             "images/product/batpod_2.jpg",
@@ -116,8 +116,8 @@
             "sport car",
             "novelty"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/delorean_1.jpg",
             "images/product/delorean_2.jpg",
@@ -133,8 +133,8 @@
         "type": [
             "motorcycle"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/easyrider-america_1.jpg",
             "images/product/easyrider-america_2.jpg",
@@ -150,8 +150,8 @@
         "type": [
             "motorcycle"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/easyrider-billy_1.jpg",
             "images/product/easyrider-billy_2.jpg",
@@ -168,8 +168,8 @@
             "hot rod",
             "novelty"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/goodburger_1.jpg",
             "images/product/goodburger_2.jpg",
@@ -185,8 +185,8 @@
         "type": [
             "hot rod"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/grease_1.jpg",
             "images/product/grease_2.jpg",
@@ -202,8 +202,8 @@
         "type": [
             "sport car"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/herbie_1.jpg",
             "images/product/herbie_2.jpg",
@@ -219,7 +219,7 @@
         "type": [
             "novelty"
         ],
-        "price": "",
+        "price": "5000",
         "description": "episode: Mermaid Man & Barnacle Boy",
         "images": [
             "images/product/invisible_1.jpg",
@@ -236,8 +236,8 @@
         "type": [
             "SUV"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/jeep_1.jpg",
             "images/product/jeep_2.jpg",
@@ -253,7 +253,7 @@
         "type": [
             "sport car"
         ],
-        "price": "",
+        "price": "5000",
         "description": "manga date / anime date / cartoon date?",
         "images": [
             "images/product/mach5_1.jpg",
@@ -270,7 +270,7 @@
         "type": [
             "SUV"
         ],
-        "price": "",
+        "price": "5000",
         "description": "film is in 2002",
         "images": [
             "images/product/mystery_1.jpg",
@@ -287,7 +287,7 @@
         "type": [
             "motorcycle"
         ],
-        "price": "",
+        "price": "5000",
         "description": "modified Honda CM400A",
         "images": [
             "images/product/prince_1.jpg",
@@ -304,8 +304,8 @@
         "type": [
             "SUV"
         ],
-        "price": "",
-        "description": "",
+        "price": "5000",
+        "description": "placeholder description... drive this car! Seen in X movie, based on X model...",
         "images": [
             "images/product/tmnt_1.jpg",
             "images/product/tmnt_2.jpg",
