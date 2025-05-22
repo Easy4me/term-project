@@ -1,26 +1,26 @@
 extends layout 
 
 block content
+    pre= JSON.stringify(car, null, 2)
     .product-field
         .product-left
             .product-image
-                img(src=product.image, alt=`picture of ${product.name}`)
+                img(src=car.images[0], alt=`picture of ${car.fullName}`)
             .product-thumbnails
-                each image in product.images
-                    img(src=image, alt=`thumbnail of ${product.name}`, class="thumbnail", onclick=`changeMainImage('${image}')`)
+                each image in car.images
+                    img(src=image, alt=`thumbnail of ${car.fullName}`, class="thumbnail", onclick=`changeMainImage('${image}')`)
 
         .product-right
             .name
-                p= product.name
+                p= car.fullName
             .seen-in
-                p= car.movie 
+                p= car.movie
                 p= car.year
             .description 
-                p= product.description
+                p= car.description
             .price
-                p= product.price
+                p= car.price
             .button 
-                button(type="button", onclick=`addToCart('${product.name}')`) Add to Cart
+                button(type="button", onclick=`addToCart('${car.shortName}')`) Add to Cart
     .see-also
         p You may also enjoy...
-            
