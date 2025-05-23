@@ -65,15 +65,21 @@ app.get('/cart', (req, res) => {
 });
 app.get('/checkout', (req, res) => res.render('checkout'));
 app.get('/profile', (req, res) => {
-  const user = { username: "Guest", email: "guest@example.com" }; // mock user
-  res.render('profile', { user });
+  if (!req.session.userId) {
+    return res.redirect('/login');
+  }
+  db.get('SELECT username, email FROM users WHERE id = ?', [req.session.userId], (err, user) => {
+    if (err || !user) return res.status(500).send('User not found.');
+    res.render('profile', { user });
+  });
 });
+
 app.get('/about', (req, res) => res.render('about-faq'));
 app.get('/order-confirmed', (req, res) => res.render('order-confirmed'));
 
 
 app.post('/user', (req, res) => {
-  const user = { username,  email } = req.body;
+  const user = { email, password } = req.body;
   res.render('/profile', {user});
 });
 
@@ -145,8 +151,8 @@ app.put('/products/:id', (req, res) => {
   );
 });
 app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  db.get(`SELECT * FROM users WHERE username = ? AND password = ?`, [username, password], (err, user) => {
+  const { email, password } = req.body;
+  db.get(`SELECT * FROM users WHERE email = ? AND password = ?`, [email, password], (err, user) => {
     if (err || !user) return res.status(401).send('Invalid login');
 
     req.session.userId = user.id;
