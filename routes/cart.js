@@ -79,4 +79,7 @@ router.post('/decrement', (req, res) => {
   res.redirect('/cart');
 });
 
-module.exports = router;
+module.exports = {
+  router,
+  updateUserCart
+};

@@ -6,9 +6,9 @@ const PORT = process.env.PORT || 3000;
 
 const cars = require('./data/cars.json'); // for front-end demo rendering
 app.use(express.urlencoded({ extended: true }));   
+
 const registerRouter = require('./routes/registration');
 app.use('/registration', registerRouter);
-
 
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
@@ -21,7 +21,8 @@ app.use(session({
   cookie: { secure: false } // set true only with HTTPS
 }));
 
-const cartRouter = require('./routes/cart');
+//const cartRouter = require('./routes/cart');
+const { router: cartRouter, updateUserCart } = require('./routes/cart');
 app.use('/cart', cartRouter);  // Mount it to root so /cart/add and /cart/remove work
 
 // SQLite connection
@@ -174,7 +175,11 @@ app.post('/logout', (req, res) => {
   if (req.session.userId && req.session.cart) {
     updateUserCart(req.session.userId, req.session.cart);
   }
-  req.session.destroy(() => res.redirect('/'));
+  //res.render('login')
+  req.session.destroy(err => {
+    if (err) return res.status(500).send('Error logging out.');
+    res.redirect('/');
+  });
 });
 
 /* ---------------------------
