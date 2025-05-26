@@ -1,6 +1,22 @@
+/* =========================
+   IMPORTS & ROOT VARIABLES
+   ========================= */
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Teko:wght@300..700&display=swap');
 
-/* Base Reset */
+:root {
+  --header-footer-bg: ;
+  --text-bg: rgba(20, 20, 20, 0.7);
+  --text-color: #dadada;
+  --hover-color: ;
+  --active-color: ;
+  --visited-color: ;
+  --card-color: ;
+  --price-color: ;
+}
+
+/* =========================
+   BASE RESET & BODY
+   ========================= */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,12 +33,18 @@ body {
   background-size: 300px 300px;
 }
 
-/* Sticky Header + Footer */
+p {
+  font-family: 'Lato', sans-serif;
+  color: var(--text-color)
+}
+
+/* =========================
+   HEADER & FOOTER
+   ========================= */
 header {
   background: #222;
   color: #fff;
   padding: 0.5rem;
-  /* was 1rem */
   text-align: center;
   position: sticky;
   top: 0;
@@ -44,7 +66,9 @@ footer {
   font-size: 0.9rem;
 }
 
-/* NAVIGATION STRUCTURE */
+/* =========================
+   NAVIGATION
+   ========================= */
 nav {
   width: 100%;
 }
@@ -54,7 +78,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  /* was 0.5em 0 */
 }
 
 .nav-left,
@@ -95,7 +118,6 @@ nav {
   display: flex;
   justify-content: center;
   padding-top: 0.2rem;
-  /* was 0.5rem */
 }
 
 .nav-bottom ul {
@@ -106,7 +128,9 @@ nav {
   padding: 0;
 }
 
-/* LINKS */
+/* =========================
+   LINKS
+   ========================= */
 .nav-right ul li a,
 .nav-bottom ul li a,
 .footer-left a {
@@ -114,11 +138,12 @@ nav {
   text-decoration: none;
   margin: 0 0.5rem;
   font-size: 1rem;
-  /* reduce if needed */
   padding: 0.2em 0.4em;
 }
 
-/* SEARCH FORM */
+/* =========================
+   SEARCH FORM
+   ========================= */
 .nav-mid form {
   display: flex;
   flex-direction: row;
@@ -147,14 +172,29 @@ nav {
   font-size: 1rem;
 }
 
-/* MAIN */
+/* =========================
+   MAIN CONTENT
+   ========================= */
 main {
   padding: 2rem;
   width: 100%;
   margin: 0;
+  text-align: center;
 }
 
-/* SLIDESHOW */
+main p {
+  display: inline-block;
+  text-align: center;
+  background: var(--text-bg);
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  max-width: 90vw;
+}
+
+/* =========================
+   SLIDESHOW
+   ========================= */
 .slideshow {
   display: flex;
   justify-content: center;
@@ -171,11 +211,8 @@ main {
   border-radius: 8px;
   max-width: 100%;
   height: 260px;
-  /* Set a fixed height */
   width: auto;
-  /* Allow width to adjust for aspect ratio */
   object-fit: contain;
-  /* Show full image, preserve aspect ratio */
 }
 
 .slideshow button.prev,
@@ -184,10 +221,8 @@ main {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  background: #fff;
-  /* White background */
-  color: #222;
-  /* Dark gray symbol */
+  background: var(--text-color);
+  color: var(--text-bg);
   border: none;
   font-size: 2em;
   cursor: pointer;
@@ -211,20 +246,26 @@ main {
   right: 20px;
 }
 
-/* PRODUCT GRID & CARDS */
+/* =========================
+   PRODUCT GRID & CARDS
+   ========================= */
+.section-separator {
+  width: 100%;
+  height: 4px;
+  background: var(--text-bg, #222);
+  margin-bottom: 6px;
+  border-radius: 8px;
+}
 
-/* Layout for products section */
 .products {
   display: flex;
   gap: 0.5rem;
   align-items: flex-start;
 }
 
-/* Filters on the left */
 .filters {
   position: sticky;
-  top: 56px;
-  /* Set this to your header's height (adjust as needed) */
+  top: 108px;
   align-self: flex-start;
   z-index: 900;
   width: 170px;
@@ -241,10 +282,8 @@ main {
   padding: 0.5rem;
 }
 
-/* Product grid on the right */
 .product-grid {
   flex: 1 1 0;
-  /* take remaining space */
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -254,7 +293,6 @@ main {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  /* match card width */
   width: 100%;
 }
 
@@ -304,7 +342,6 @@ main {
   font-size: 0.95rem;
   background: rgba(255, 255, 255, 0.95);
   min-height: 2.2em;
-  /* matches two lines of text */
 }
 
 .card-name {
@@ -320,7 +357,6 @@ main {
   white-space: normal;
   max-width: 60%;
   min-height: 1.1em;
-  /* one line */
 }
 
 .card-price {
@@ -334,7 +370,9 @@ main {
   max-width: 35%;
 }
 
-/* PRODUCT DETAIL PAGE */
+/* =========================
+   PRODUCT DETAIL PAGE
+   ========================= */
 .product-field {
   display: flex;
   flex-direction: row;
@@ -361,7 +399,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  /* right justify all content */
   text-align: right;
   gap: 0.5rem;
 }
@@ -392,7 +429,6 @@ main {
   margin-bottom: 0.5rem;
   text-align: justify;
   text-indent: 2em;
-  /* Indent the first line */
 }
 
 .product-thumbnails {
@@ -400,12 +436,12 @@ main {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  /* space between thumbnails */
   margin-top: 1rem;
-  /* space below main image */
 }
 
-/* CART TABLE */
+/* =========================
+   CART TABLE
+   ========================= */
 .cart-table {
   width: 100%;
   border-collapse: collapse;
@@ -423,7 +459,9 @@ main {
   text-align: right;
 }
 
-/* FORMS */
+/* =========================
+   FORMS
+   ========================= */
 form {
   display: flex;
   flex-direction: column;
@@ -486,37 +524,32 @@ button:hover {
   font-size: 1rem;
 }
 
-/* --- Cart Card Styles --- */
+/* =========================
+   CART CARD
+   ========================= */
 .cart-card {
   display: flex;
   align-items: center;
-  /* Center vertically */
   justify-content: space-between;
   background: #fff;
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   padding: 0.6em 1em;
-  /* Less vertical padding */
   margin-bottom: 1em;
   min-height: 80px;
   gap: 1.5em;
 }
 
-/* Stack image and name vertically */
 .cart-card-left {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5em;
   min-width: 180px;
-  /* Increase this value as needed */
   width: 220px;
-  /* Add a fixed width for more space */
   flex: 0 0 220px;
-  /* Prevent shrinking */
 }
 
-/* Enlarge thumbnail */
 .cart-thumb {
   width: 128px;
   height: 96px;
@@ -526,19 +559,14 @@ button:hover {
   flex-shrink: 0;
 }
 
-/* Center and allow wrapping for long names */
 .cart-car-name {
   font-weight: bold;
   font-size: 1.1rem;
   text-align: center;
   white-space: nowrap;
-  /* Prevent wrapping */
   overflow: hidden;
-  /* Hide overflow */
   text-overflow: ellipsis;
-  /* Show ... if too long */
   max-width: 200px;
-  /* Match or slightly less than .cart-card-left width */
   margin-top: 0.2em;
 }
 
@@ -609,7 +637,9 @@ button:hover {
   gap: 0.7em;
 }
 
-/* RESPONSIVE LAYOUT */
+/* =========================
+   RESPONSIVE LAYOUT
+   ========================= */
 @media (max-width: 768px) {
 
   .nav-top,
@@ -646,7 +676,9 @@ button:hover {
   }
 }
 
+/* =========================
+   MISCELLANEOUS
+   ========================= */
 #products {
   scroll-margin-top: 80px;
-  /* Adjust this value to match your header height */
 }
