@@ -34,7 +34,6 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-family: sans-serif;
-  background: #f5f5f5;
   color: var(--text-color);
   line-height: 1.6;
   background-image: url('images/tires.jpg');
@@ -151,6 +150,12 @@ nav {
   font-size: 1.6rem;
   padding: 0.1em 0.2em;
   font-family: 'Teko', sans-serif;
+}
+
+.nav-right ul li a:hover,
+.nav-bottom ul li a:hover {
+  background: var(--text-bg);
+  border-radius: 8px;
 }
 
 /* =========================
@@ -483,16 +488,24 @@ main {
 /* =========================
    FORMS
    ========================= */
+
+.login-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: var(--header-footer-bg);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   max-width: 400px;
   margin: 2rem auto;
-  background: var(--header-footer-bg);
+  background: var(--text-bg);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 input,
@@ -668,6 +681,10 @@ button:hover {
   .product-field {
     flex-direction: column;
     align-items: center;
+  }
+
+  .nav-left a {
+    padding: 0;
   }
 
   .nav-bottom ul {
