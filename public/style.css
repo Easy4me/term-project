@@ -497,6 +497,11 @@ main {
   border-radius: 12px;
 }
 
+#cart.forms {
+  max-width: 900px;
+  ;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -565,28 +570,20 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-  padding: 0.6em 1em;
+  border-radius: 16px;
   margin-bottom: 1em;
-  min-height: 80px;
-  gap: 1.5em;
+  background: var(--text-bg);
 }
 
 .cart-card-left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5em;
-  min-width: 180px;
-  width: 220px;
-  flex: 0 0 220px;
+  padding: 40px;
 }
 
 .cart-thumb {
-  width: 128px;
-  height: 96px;
+  width: 150px;
   object-fit: cover;
   border-radius: 8px;
   background: #eee;
@@ -601,23 +598,23 @@ button:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 200px;
-  margin-top: 0.2em;
+  margin-top: 0.3em;
 }
 
 .cart-card-right {
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-  min-width: 120px;
-  flex: 1 0 120px;
+  align-items: center;
+  justify-content: center;
 }
 
 .cart-qty-form {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.3em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0em;
 }
 
 .qty-btn {
@@ -659,16 +656,18 @@ button:hover {
 
 .cart-total {
   font-size: 1.1em;
-  color: #222;
+  color: var(--price-color);
   font-weight: bold;
-  margin-top: 1.2em;
-  align-self: flex-end;
+  align-self: center;
+  padding-bottom: 10px;
+  ;
 }
 
 .cart-qty-remove-row {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.7em;
+  gap: 0.5em;
 }
 
 /* =========================
