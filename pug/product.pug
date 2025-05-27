@@ -32,7 +32,7 @@ block content
             p.description= car.description
             p.price $#{car.price.toLocaleString()}
             .button 
-                button(type="button", onclick=`addToCart('${car.car_name}', ${car.price})`) Add to Cart
+                button(type="button", onclick=`addToCart('${car.shortName}', ${car.price})`) Add to Cart
 
 block scripts
     script.
