@@ -34,7 +34,7 @@ block content
             .price
                 p $#{car.price.toLocaleString()}
             .button 
-                button(type="button", onclick=`addToCart('${car.shortName}', ${car.price})`) Add to Cart
+                button(type="button", onclick=`addToCart('${car.car_name}', ${car.price})`) Add to Cart
     .see-also
         p You may also enjoy...
 
@@ -54,20 +54,15 @@ block scripts
 
             fetch('/cart/add', {
                 method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Accept': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: formData,
                 credentials: 'same-origin'
             })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Added to cart!');
-                    // Optionally update cart UI here
+            .then(res => {
+                if (res.redirected) {
+                    window.location = res.url;
                 } else {
-                    alert('Failed to add to cart');
+                    alert('Added to cart!');
                 }
             });
         }

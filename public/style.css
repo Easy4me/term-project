@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Teko:wght@300..700&display=swap');
 
 :root {
-  --header-footer-bg: ;
+  --header-footer-bg: rgba(30, 25, 35, 1);
   --text-bg: rgba(20, 20, 20, 0.7);
   --text-color: #dadada;
   --hover-color: ;
@@ -42,8 +42,8 @@ p {
    HEADER & FOOTER
    ========================= */
 header {
-  background: #222;
-  color: #fff;
+  background: var(--header-footer-bg);
+  color: var(--text-color);
   padding: 0.5rem;
   text-align: center;
   position: sticky;
@@ -58,7 +58,7 @@ header.unstuck {
 }
 
 footer {
-  background: #222;
+  background: var(--header-footer-bg);
   color: #fff;
   padding: 10px;
   text-align: center;
@@ -94,7 +94,7 @@ nav {
 }
 
 .nav-left a {
-  color: white;
+  color: var(--text-color);
   font-family: 'Bangers', cursive;
   font-size: 2.5rem;
   letter-spacing: 2px;
@@ -134,7 +134,7 @@ nav {
 .nav-right ul li a,
 .nav-bottom ul li a,
 .footer-left a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   margin: 0 0.5rem;
   font-size: 1rem;
@@ -182,7 +182,7 @@ main {
   text-align: center;
 }
 
-main p {
+.hello {
   display: inline-block;
   text-align: center;
   background: var(--text-bg);
@@ -252,7 +252,7 @@ main p {
 .section-separator {
   width: 100%;
   height: 4px;
-  background: var(--text-bg, #222);
+  background: var(--text-bg);
   margin-bottom: 6px;
   border-radius: 8px;
 }
@@ -278,7 +278,6 @@ main p {
 .filters h3 {
   font-size: 1rem;
   text-align: center;
-  color: #555;
   padding: 0.5rem;
 }
 
@@ -299,12 +298,10 @@ main p {
 .card {
   width: 220px;
   height: 220px;
-  background: white;
-  border: 1px solid #ccc;
+  background: var(--header-footer-bg);
   border-radius: 8px;
   overflow: hidden;
   text-align: center;
-  transition: box-shadow 0.2s ease-in-out;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -340,7 +337,7 @@ main p {
   align-items: flex-start;
   padding: 8px 10px 10px 10px;
   font-size: 0.95rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--card-color);
   min-height: 2.2em;
 }
 
@@ -468,7 +465,7 @@ form {
   gap: 1rem;
   max-width: 400px;
   margin: 2rem auto;
-  background: white;
+  background: var(--header-footer-bg);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
