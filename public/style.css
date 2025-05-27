@@ -670,6 +670,18 @@ button:hover {
   gap: 0.5em;
 }
 
+
+.about-page {
+  background: var(--text-bg);
+  text-align: left;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.about-page h2 {
+  margin-top: 1rem;
+}
+
 /* =========================
    RESPONSIVE LAYOUT
    ========================= */
