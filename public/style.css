@@ -5,13 +5,13 @@
 
 :root {
   --header-footer-bg: rgba(30, 25, 35, 1);
-  --text-bg: rgba(20, 20, 20, 0.7);
+  --text-bg: rgba(15, 15, 25, 0.8);
   --text-color: #dadada;
   --hover-color: ;
   --active-color: ;
   --visited-color: ;
   --card-color: ;
-  --price-color: ;
+  --price-color: #00b050;
 }
 
 /* =========================
@@ -358,6 +358,8 @@ main {
   font-size: 0.95rem;
   background: var(--card-color);
   min-height: 2.2em;
+  letter-spacing: 0;
+  ;
 }
 
 .card-name {
@@ -376,7 +378,7 @@ main {
 }
 
 .card-price {
-  color: green;
+  color: var(--price-color);
   font-size: 0.98rem;
   text-align: right;
   margin: 0;
@@ -396,6 +398,8 @@ main {
   justify-content: center;
   padding: 2rem;
   width: 100%;
+  background: var(--text-bg);
+  border-radius: 12px;
 }
 
 .product-image img {
@@ -427,21 +431,20 @@ main {
 
 .product-right .seen-in {
   font-style: italic;
-  color: #555;
-  font-size: 1.1rem;
+  color: #ccc;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
 .product-right .price {
   font-size: 1.5rem;
-  color: green;
+  color: var(--price-color);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .product-right .description {
   font-size: 1.1rem;
-  color: #333;
   margin-bottom: 0.5rem;
   text-align: justify;
   text-indent: 2em;
@@ -666,6 +669,7 @@ button:hover {
   }
 
   .nav-bottom ul {
+    padding: 3px;
     gap: .2em;
   }
 
@@ -674,10 +678,10 @@ button:hover {
   }
 
   .nav-mid form {
-    flex-direction: column;
     width: 100%;
     gap: 0.5rem;
     align-items: center;
+    padding-bottom: 8px;
   }
 
   .nav-mid input[type="text"],

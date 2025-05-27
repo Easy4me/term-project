@@ -29,14 +29,10 @@ block content
                 | seen in: 
                 b #{car.movie}
                 | , #{car.year}
-            .description 
-                p= car.description
-            .price
-                p $#{car.price.toLocaleString()}
+            p.description= car.description
+            p.price $#{car.price.toLocaleString()}
             .button 
                 button(type="button", onclick=`addToCart('${car.car_name}', ${car.price})`) Add to Cart
-    .see-also
-        p You may also enjoy...
 
 block scripts
     script.
