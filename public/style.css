@@ -148,8 +148,9 @@ nav {
   color: var(--text-color);
   text-decoration: none;
   margin: 0 0.5rem;
-  font-size: 1rem;
-  padding: 0.2em 0.4em;
+  font-size: 1.6rem;
+  padding: 0.1em 0.2em;
+  font-family: 'Teko', sans-serif;
 }
 
 /* =========================
@@ -164,6 +165,7 @@ nav {
   padding: 0;
   box-shadow: none;
   background: none;
+  font-family: 'Lato', sans-serif;
 }
 
 .nav-mid input[type="text"] {
@@ -669,7 +671,6 @@ button:hover {
   }
 
   .nav-bottom ul {
-    padding: 3px;
     gap: .2em;
   }
 
