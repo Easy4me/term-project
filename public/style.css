@@ -23,10 +23,19 @@
   padding: 0;
 }
 
+html,
 body {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: sans-serif;
   background: #f5f5f5;
-  color: #333;
+  color: var(--text-color);
   line-height: 1.6;
   background-image: url('images/tires.jpg');
   background-repeat: repeat;
@@ -64,6 +73,8 @@ footer {
   text-align: center;
   margin-top: 2rem;
   font-size: 0.9rem;
+  position: static;
+  margin-top: auto;
 }
 
 /* =========================
@@ -180,6 +191,9 @@ main {
   width: 100%;
   margin: 0;
   text-align: center;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: .5px;
+  flex: 1 0 auto;
 }
 
 .hello {
@@ -255,6 +269,11 @@ main {
   background: var(--text-bg);
   margin-bottom: 6px;
   border-radius: 8px;
+}
+
+.product-heading {
+  text-align: left;
+  padding-bottom: 4px;
 }
 
 .products {
