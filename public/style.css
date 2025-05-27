@@ -489,7 +489,7 @@ main {
    FORMS
    ========================= */
 
-.login-form {
+.forms {
   max-width: 400px;
   margin: 2rem auto;
   background: var(--header-footer-bg);
