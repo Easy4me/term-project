@@ -84,6 +84,23 @@ app.post('/user', (req, res) => {
   res.render('/profile', {user});
 });
 
+app.get('/search', (req, res) => {
+  const query = req.query.q?.toLowerCase();
+  if (!query) return res.redirect('/');
+
+  // Search in JSON array
+  const results = cars.filter(car => {
+    return (
+      car.fullName.toLowerCase().includes(query) ||
+      car.description.toLowerCase().includes(query) ||
+      car.movie.toLowerCase().includes(query) ||
+      car.type.some(type => type.toLowerCase().includes(query))
+    );
+  });
+
+  res.render('search-results', { results, query });
+});
+
 /* ---------------------------
    PRODUCTS API (DATABASE)
 ---------------------------- */
